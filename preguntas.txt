@@ -1,0 +1,44 @@
+Para que se usa "self._final_pop" en gama
+Dónde está "DATA_TERMINAL"?
+
+
+la variable "config" en GamaClassifier se puede usar para warm-start?
+No, el warm start está definido en fit de gama (la superclase más grande)
+
+Yield es como return pero regresa un generador, un generador es un iterable en el que solamente se puede
+iterar una vez
+
+yield es útil cuando sabes que tu función va a regresar una gran cantidad de valores que solamente necesitaras una vez
+Yield se ejecuta una vez pero se está llamando continuamente hasta que se vacía el generador (Yield)
+
+Regresa el pipeline para encoding the X matrix y las columnas ya codificadas
+
+
+#Basic Pipeline extension no es un pipeline es una lista con el imputer por si lo necesitamos después
+
+#_operator_set está guardando _fixed_pipeline_extension para no regar el tepache con el preprocesamiento de los datos
+
+# self._pset está dividido en técnicas de preprocesamiento y clasificación o regresión
+
+# max_eval_time es el tiempo máximo para evaluar cada una de las opciones
+
+# setattr()
+
+setatt(object, name, value)
+
+
+
+
+
+
+
+
+
+
+isinstance(object, type)
+squezee: Este método es más útil cuando no sabes si tu objeto es una Serie o un DataFrame, 
+pero sí sabes que tiene una sola columna. En ese caso puedes llamar con seguridad a squeeze 
+para asegurarte de que tienes una Serie.
+En Gama se preprocesa la matriz X por si tenemos valores nominales
+
+

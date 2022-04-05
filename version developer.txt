@@ -1,0 +1,6 @@
+tienes que descargar gama de github y ponerlo en una carpeta (descargar el zip y extraerlo 
+la carpeta final tiene que ser "gama-master") llamada "gama-master"
+pip install -e C:/Users/20210595/Documents/PhD/Experiments/gamaPyGMO/gama-master
+
+
+python3 -m pip install...
