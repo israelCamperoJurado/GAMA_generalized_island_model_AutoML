@@ -265,7 +265,7 @@ def pygmo_serach(
     max_n_evaluations: Optional[int] = None,
     population_size: int = 50,
     islands: int = 8,
-    iters: int = 50,
+    iters: int = 10000,
 ) -> List[Individual]:
     if not isinstance(minimum_resource, type(maximum_resource)):
         raise ValueError("Currently minimum and maximum resource must same type.")
