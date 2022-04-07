@@ -874,7 +874,7 @@ class Gama(ABC):
 
     def _on_evaluation_completed(self, evaluation: Evaluation):
         for callback in self._subscribers["evaluation_completed"]:
-            print("starting callback from gama.py")
+            # print("starting callback from gama.py")
             self._safe_outside_call(partial(callback, evaluation))
 
     def evaluation_completed(self, callback: Callable[[Evaluation], Any]) -> None:
