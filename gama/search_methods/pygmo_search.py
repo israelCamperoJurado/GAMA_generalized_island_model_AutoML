@@ -135,23 +135,23 @@ def top(elementos = 10, path=None):
                     except:
                         new_lista = []
                     lista_top = lista_top + new_lista
-    print("len lista_top", len(lista_top))
+    #print("len lista_top", len(lista_top))
     f_vectors = [new_individual.fitness.values[0] for new_individual in lista_top]
     for i in range(len(f_vectors)):
         if f_vectors[i] == -np.inf:
             f_vectors[i] = -10000
     f_vectors = np.array(f_vectors)
-    print("Valores para ordenar del fitness", f_vectors)
+    #print("Valores para ordenar del fitness", f_vectors)
     if len(f_vectors) > elementos:
         #indices_best = f_vectors.argsort()[:10]
         indices_best = f_vectors.argsort()[-elementos:][::-1]
         indices_best = indices_best.tolist()
-        print("indices_best", indices_best)
+        #print("indices_best", indices_best)
         lista_ind_numpy = np.array(lista_top)
         lista_to_return = lista_ind_numpy[indices_best]
         lista_to_return = lista_to_return.tolist()
-        print("lista_to_return", lista_to_return)
-        print("type lista_to_return", type(lista_to_return))
+        #print("lista_to_return", lista_to_return)
+        #print("type lista_to_return", type(lista_to_return))
         return lista_to_return
     elif len(f_vectors) > 1:
         indices_best = f_vectors.argsort()[::-1]
@@ -217,15 +217,15 @@ class AutoMLProblem(object):
         # print("self.evaluate", self.evaluate)
         # evaluate = self.evaluate
         rung = self.rung
-        print("rung", rung)
+        # print("rung", rung)
         # subsample=self.rung_resources[self.rung]
         # timeout=(10 + (self.time_penalty * 600))
         # print("Hi Pieter", **AsyncEvaluator.defaults)
         result = evaluate_on_rung(
             ind1, self.rung, self.max_rung, ops.evaluate
         )
-        print("result _ loss_function", result)
-        print("type result _ loss_function", type(result))
+        # print("result _ loss_function", result)
+        # print("type result _ loss_function", type(result))
         # result = ops.evaluate(
         #                     ind1,
         #                     rung,
@@ -273,14 +273,14 @@ def pygmo_serach(
     path = path
     os.makedirs(path, exist_ok=True)
     
-    print("maximum_resource", maximum_resource)
+    # print("maximum_resource", maximum_resource)
      # Note that here we index the rungs by all possible rungs (0..ceil(log_eta(R/r))),
     # and ignore the first minimum_early_stopping_rate rungs.
     # This contrasts the paper where rung 0 refers to the first used one.
     max_rung = math.ceil(
         math.log(maximum_resource / minimum_resource, reduction_factor)
     )
-    print("max_rung", max_rung)
+    # print("max_rung", max_rung)
     rungs = range(minimum_early_stopping_rate, max_rung + 1)
     rung_resources = {
         rung: min(minimum_resource * (reduction_factor ** rung), maximum_resource)
@@ -294,8 +294,8 @@ def pygmo_serach(
         rung: [] for rung in reversed(rungs)
     }
     
-    print("rung_individuals", rung_individuals)
-    print("type rung_individuals", type(rung_individuals))
+    # print("rung_individuals", rung_individuals)
+    # print("type rung_individuals", type(rung_individuals))
     promoted_individuals: Dict[int, List[Individual]] = {
         rung: [] for rung in reversed(rungs)
     }
@@ -317,7 +317,7 @@ def pygmo_serach(
         new_vector = instance_individual_to_vectors(i)
         x_vectors.append(new_vector)
                               
-    print("START with pygmo")    
+    # print("START with pygmo")    
     # algo = pg.algorithm(pg.de(gen = iters))
     # individual, rung = get_job()
     # time_penalty = rung_resources[rung] / max(rung_resources.values())
@@ -333,11 +333,11 @@ def pygmo_serach(
     #         evaluate_on_rung, evaluate_individual=ops.evaluate, max_rung=max_rung
     #     )
 
-    print("previous time", time_limit)
-    print("type time", type(time_limit))
+    # print("previous time", time_limit)
+    # print("type time", type(time_limit))
     new_time_limit = (int(time_limit / len(rungs)))
-    print("New time_limit inside pygmo class search", new_time_limit)
-    print("type new_time_limit", type(new_time_limit))
+    # print("New time_limit inside pygmo class search", new_time_limit)
+    # print("type new_time_limit", type(new_time_limit))
 
     for rung in rungs:
     #for rung in [1, 2]:
@@ -385,29 +385,29 @@ def pygmo_serach(
 
                     for isl in isls:
                         archi.push_back(isl)
-                    print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
+                    # print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
 
                     #archi = pg.archipelago(n=islands, algo=algo, pop=pop, t=pg.topology(pg.ring()))
-                    print("CREATION OF THE ARCHIPELAGO, IT WILL START THE EVOLUTION IN PARALLEL")
-                    print(archi)
+                    # print("CREATION OF THE ARCHIPELAGO, IT WILL START THE EVOLUTION IN PARALLEL")
+                    # print(archi)
                     archi.get_champions_f()
-                    print(archi.get_champions_f())
+                    # print(archi.get_champions_f())
                     archi.evolve()
                     # archi.wait()
                     archi.wait_check()
                     archi.get_champions_f()
-                    print(archi.get_champions_f())
-                    print("IT JUST FINISH")
-                    print(archi)
-                    print("Let's start with the iterative process")
-                    print("len archi.get_champions_f()", len(archi.get_champions_f()))
-                    print("len archi.get_champions_x()[0]", len(archi.get_champions_x()[0]))
-                    print("len archi.get_champions_x()", len(archi.get_champions_x()))
+                    # print(archi.get_champions_f())
+                    # print("IT JUST FINISH")
+                    # print(archi)
+                    # print("Let's start with the iterative process")
+                    # print("len archi.get_champions_f()", len(archi.get_champions_f()))
+                    # print("len archi.get_champions_x()[0]", len(archi.get_champions_x()[0]))
+                    # print("len archi.get_champions_x()", len(archi.get_champions_x()))
 
 
                     # final_output = []
                     x_of_island_champion = archi.get_champions_x()
-                    print("El archipelago tiene ", len(x_of_island_champion), " nuevos individuos")
+                    # print("El archipelago tiene ", len(x_of_island_champion), " nuevos individuos")
                     for k in x_of_island_champion:
                         final_instance = ValuesSearchSpace(k)
                         individual_from_x = final_instance.get_individuals()
@@ -417,7 +417,7 @@ def pygmo_serach(
             #if rung>0 and rung<max_rung:
             if rung > 0:
                 with stopit.ThreadingTimeout(new_time_limit) as pyg_time_highest:
-                    print("We are not in the first Rung")
+                    # print("We are not in the first Rung")
                     list_aux_save_individuals = []
                     n_i = math.ceil(100 * (reduction_factor ** (-rung))) # In the paper of Successive is ni, number of configurations to use in the next step
                     if n_i < 5: n_i=5
@@ -481,28 +481,28 @@ def pygmo_serach(
 
                     for isl in isls:
                         archi.push_back(isl)
-                    print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
+                    # print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
 
                     # archi = pg.archipelago(n=islands, algo=algo, pop=pop, t=pg.topology(pg.ring()))
-                    print("CREATION OF THE ARCHIPELAGO, IT WILL START THE EVOLUTION IN PARALLEL")
-                    print(archi)
+                    # print("CREATION OF THE ARCHIPELAGO, IT WILL START THE EVOLUTION IN PARALLEL")
+                    # print(archi)
                     archi.get_champions_f()
-                    print(archi.get_champions_f())
+                    # print(archi.get_champions_f())
                     archi.evolve()
                     # archi.wait()
                     archi.wait_check()
                     archi.get_champions_f()
-                    print(archi.get_champions_f())
-                    print("IT JUST FINISH")
-                    print(archi)
-                    print("Let's start with the iterative process")
-                    print("len archi.get_champions_f()", len(archi.get_champions_f()))
-                    print("len archi.get_champions_x()[0]", len(archi.get_champions_x()[0]))
-                    print("len archi.get_champions_x()", len(archi.get_champions_x()))
+                    # print(archi.get_champions_f())
+                    # print("IT JUST FINISH")
+                    # print(archi)
+                    # print("Let's start with the iterative process")
+                    # print("len archi.get_champions_f()", len(archi.get_champions_f()))
+                    # print("len archi.get_champions_x()[0]", len(archi.get_champions_x()[0]))
+                    # print("len archi.get_champions_x()", len(archi.get_champions_x()))
 
                     # final_output = []
                     x_of_island_champion = archi.get_champions_x()
-                    print("El archipelago tiene ", len(x_of_island_champion), " nuevos individuos")
+                    # print("El archipelago tiene ", len(x_of_island_champion), " nuevos individuos")
                     for k in x_of_island_champion:
                         final_instance = ValuesSearchSpace(k)
                         individual_from_x = final_instance.get_individuals()
