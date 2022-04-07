@@ -370,8 +370,8 @@ def pygmo_serach(
                     archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.free_form()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy) # unconnected
-                    # broadcast = pg.migration_type(1) # 1 = Broadcast type
-                    # archi.set_migration_type(broadcast)
+                    broadcast = pg.migration_type(1) # 1 = Broadcast type
+                    archi.set_migration_type(broadcast)
 
                     isl1 = pg.island(algo = pg.algorithm(pg.de(gen = iters)), pop=pop)
                     isl2 = pg.island(algo = pg.algorithm(pg.sade(gen = iters)), pop=pop)
@@ -466,8 +466,8 @@ def pygmo_serach(
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.free_form()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy) # unconnected
 
-                    # broadcast = pg.migration_type(1)  # 1 = Broadcast type
-                    # archi.set_migration_type(broadcast)
+                    broadcast = pg.migration_type(1)  # 1 = Broadcast type
+                    archi.set_migration_type(broadcast)
 
                     isl1 = pg.island(algo=pg.algorithm(pg.de(gen=iters)), pop=pop)
                     isl2 = pg.island(algo=pg.algorithm(pg.sade(gen=iters)), pop=pop)
