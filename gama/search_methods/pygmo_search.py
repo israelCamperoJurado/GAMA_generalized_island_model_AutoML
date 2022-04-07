@@ -366,12 +366,12 @@ def pygmo_serach(
                     # Changes from here
                     r_policy = pg.r_policy(pg.fair_replace(rate=0.5)) # Share 50% of the individulas en each island
                     s_policy = pg.s_policy(udsp=pg.select_best())
-                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.fully_connected()))
-                    archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
+                    archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.fully_connected()))
+                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.free_form()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy) # unconnected
-                    broadcast = pg.migration_type(1) # 1 = Broadcast type
-                    archi.set_migration_type(broadcast)
+                    # broadcast = pg.migration_type(1) # 1 = Broadcast type
+                    # archi.set_migration_type(broadcast)
 
                     isl1 = pg.island(algo = pg.algorithm(pg.de(gen = iters)), pop=pop)
                     isl2 = pg.island(algo = pg.algorithm(pg.sade(gen = iters)), pop=pop)
@@ -461,13 +461,13 @@ def pygmo_serach(
                     # Changes from here
                     r_policy = pg.r_policy(pg.fair_replace(rate=0.5))  # Share 50% of the individulas en each island
                     s_policy = pg.s_policy(udsp=pg.select_best())
-                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.fully_connected()))
-                    archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
+                    archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.fully_connected()))
+                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.free_form()))
                     # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy) # unconnected
 
-                    broadcast = pg.migration_type(1)  # 1 = Broadcast type
-                    archi.set_migration_type(broadcast)
+                    # broadcast = pg.migration_type(1)  # 1 = Broadcast type
+                    # archi.set_migration_type(broadcast)
 
                     isl1 = pg.island(algo=pg.algorithm(pg.de(gen=iters)), pop=pop)
                     isl2 = pg.island(algo=pg.algorithm(pg.sade(gen=iters)), pop=pop)
