@@ -70,7 +70,7 @@ class EvaluationLogger:
             evaluations.write(self._sep.join(values) + "\n")
 
     def log_evaluation(self, evaluation):
-        print("logging evaluation", evaluation)
+        # print("logging evaluation", evaluation)
         values = [getter(evaluation) for getter in self.fields.values()]
 
         def format_value(v):
