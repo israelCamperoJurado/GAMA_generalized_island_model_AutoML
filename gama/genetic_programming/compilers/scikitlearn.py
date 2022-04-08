@@ -75,7 +75,7 @@ def evaluate_pipeline(
     with stopit.ThreadingTimeout(timeout) as c_mgr:
         try:
             if (isinstance(subsample, int) or isinstance(subsample, float)) and subsample < len(y_train):
-                print("subsample inside condition from scikitlearn", subsample)
+                # print("subsample inside condition from scikitlearn", subsample)
                 sampler = ShuffleSplit(n_splits=1, train_size=subsample, random_state=0)
                 idx, _ = next(sampler.split(x))
                 x, y_train = x.iloc[idx, :], y_train[idx]
