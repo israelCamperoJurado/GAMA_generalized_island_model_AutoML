@@ -61,8 +61,8 @@ def evaluate_pipeline(
         estimators: list of fitted pipelines if successful, None if not
         error: None if successful, otherwise an Exception
     """
-    print("len x since scikitlearn", len(x))
-    print("subsample from scikitlearn", subsample)
+    #print("len x since scikitlearn", len(x))
+    #print("subsample from scikitlearn", subsample)
     if not object_is_valid_pipeline(pipeline):
         raise TypeError(f"Pipeline must not be None and requires fit, predict, steps.")
     if not timeout > 0:
