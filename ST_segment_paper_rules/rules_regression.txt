@@ -1,0 +1,1048 @@
+|--- pSQI <= 0.62
+|   |--- distance_J_isoelectric <= -0.65
+|   |   |--- value: [0.49]
+|   |--- distance_J_isoelectric >  -0.65
+|   |   |--- pSQI <= 0.29
+|   |   |   |--- std <= 0.12
+|   |   |   |   |--- value: [0.02]
+|   |   |   |--- std >  0.12
+|   |   |   |   |--- value: [0.14]
+|   |   |--- pSQI >  0.29
+|   |   |   |--- distance_J_isoelectric <= 0.16
+|   |   |   |   |--- distance_J_isoelectric <= 0.01
+|   |   |   |   |   |--- distance_J_isoelectric <= -0.45
+|   |   |   |   |   |   |--- distance_J_isoelectric <= -0.58
+|   |   |   |   |   |   |   |--- value: [0.66]
+|   |   |   |   |   |   |--- distance_J_isoelectric >  -0.58
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.49
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.51
+|   |   |   |   |   |   |   |   |   |--- kSQI <= -1.34
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.24
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.24
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.61]
+|   |   |   |   |   |   |   |   |   |--- kSQI >  -1.34
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.49]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.51
+|   |   |   |   |   |   |   |   |   |--- value: [0.45]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.49
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.59
+|   |   |   |   |   |   |   |   |   |--- value: [0.49]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.59
+|   |   |   |   |   |   |   |   |   |--- value: [0.61]
+|   |   |   |   |   |--- distance_J_isoelectric >  -0.45
+|   |   |   |   |   |   |--- median <= -0.03
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.27
+|   |   |   |   |   |   |   |   |--- value: [0.54]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.27
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.04
+|   |   |   |   |   |   |   |   |   |--- std <= 0.24
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.12]
+|   |   |   |   |   |   |   |   |   |--- std >  0.24
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.18
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.21]
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.18
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.04
+|   |   |   |   |   |   |   |   |   |--- pSQI <= 0.51
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.29]
+|   |   |   |   |   |   |   |   |   |--- pSQI >  0.51
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.06]
+|   |   |   |   |   |   |--- median >  -0.03
+|   |   |   |   |   |   |   |--- kSQI <= 2.60
+|   |   |   |   |   |   |   |   |--- std <= 0.21
+|   |   |   |   |   |   |   |   |   |--- std <= 0.14
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- std >  0.14
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.18
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.18
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.13]
+|   |   |   |   |   |   |   |   |--- std >  0.21
+|   |   |   |   |   |   |   |   |   |--- value: [0.21]
+|   |   |   |   |   |   |   |--- kSQI >  2.60
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.07
+|   |   |   |   |   |   |   |   |   |--- value: [-0.09]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.07
+|   |   |   |   |   |   |   |   |   |--- average <= 0.01
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |--- average >  0.01
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.14
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.14
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.04]
+|   |   |   |   |--- distance_J_isoelectric >  0.01
+|   |   |   |   |   |--- skewness <= 1.70
+|   |   |   |   |   |   |--- distance_J_isoelectric <= 0.12
+|   |   |   |   |   |   |   |--- average <= -0.07
+|   |   |   |   |   |   |   |   |--- value: [0.33]
+|   |   |   |   |   |   |   |--- average >  -0.07
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.53
+|   |   |   |   |   |   |   |   |   |--- average <= -0.04
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.20]
+|   |   |   |   |   |   |   |   |   |--- average >  -0.04
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.53
+|   |   |   |   |   |   |   |   |   |--- skewness <= -1.34
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.56
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.56
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- skewness >  -1.34
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 5.87
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  5.87
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |--- distance_J_isoelectric >  0.12
+|   |   |   |   |   |   |   |--- average <= 0.01
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.48
+|   |   |   |   |   |   |   |   |   |--- std <= 0.13
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.16
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- std >  0.13
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.15
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.09]
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.15
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.01]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.48
+|   |   |   |   |   |   |   |   |   |--- std <= 0.16
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.61
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.61
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- std >  0.16
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 0.42
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  0.42
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.09]
+|   |   |   |   |   |   |   |--- average >  0.01
+|   |   |   |   |   |   |   |   |--- skewness <= -1.79
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- skewness >  -1.79
+|   |   |   |   |   |   |   |   |   |--- std <= 0.16
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- std >  0.16
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 4.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  4.13
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.24]
+|   |   |   |   |   |--- skewness >  1.70
+|   |   |   |   |   |   |--- std <= 0.21
+|   |   |   |   |   |   |   |--- std <= 0.19
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.09
+|   |   |   |   |   |   |   |   |   |--- std <= 0.12
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- std >  0.12
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.14
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.14
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.09
+|   |   |   |   |   |   |   |   |   |--- average <= -0.01
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |   |   |--- average >  -0.01
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |--- std >  0.19
+|   |   |   |   |   |   |   |   |--- value: [0.05]
+|   |   |   |   |   |   |--- std >  0.21
+|   |   |   |   |   |   |   |--- value: [0.29]
+|   |   |   |--- distance_J_isoelectric >  0.16
+|   |   |   |   |--- pSQI <= 0.49
+|   |   |   |   |   |--- std <= 0.21
+|   |   |   |   |   |   |--- median <= 0.03
+|   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |--- median >  0.03
+|   |   |   |   |   |   |   |--- skewness <= -1.15
+|   |   |   |   |   |   |   |   |--- value: [-0.09]
+|   |   |   |   |   |   |   |--- skewness >  -1.15
+|   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |--- std >  0.21
+|   |   |   |   |   |   |--- value: [0.08]
+|   |   |   |   |--- pSQI >  0.49
+|   |   |   |   |   |--- kSQI <= 1.84
+|   |   |   |   |   |   |--- skewness <= -0.32
+|   |   |   |   |   |   |   |--- kSQI <= 0.56
+|   |   |   |   |   |   |   |   |--- median <= 0.06
+|   |   |   |   |   |   |   |   |   |--- pSQI <= 0.56
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.05]
+|   |   |   |   |   |   |   |   |   |--- pSQI >  0.56
+|   |   |   |   |   |   |   |   |   |   |--- median <= 0.05
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |   |   |   |--- median >  0.05
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- median >  0.06
+|   |   |   |   |   |   |   |   |   |--- value: [-0.14]
+|   |   |   |   |   |   |   |--- kSQI >  0.56
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.19
+|   |   |   |   |   |   |   |   |   |--- value: [-0.14]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.19
+|   |   |   |   |   |   |   |   |   |--- value: [-0.23]
+|   |   |   |   |   |   |--- skewness >  -0.32
+|   |   |   |   |   |   |   |--- skewness <= 0.55
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.60
+|   |   |   |   |   |   |   |   |   |--- std <= 0.18
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.58
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |   |   |--- std >  0.18
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= -0.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.28]
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  -0.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.27]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.60
+|   |   |   |   |   |   |   |   |   |--- skewness <= 0.21
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.21]
+|   |   |   |   |   |   |   |   |   |--- skewness >  0.21
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.12]
+|   |   |   |   |   |   |   |--- skewness >  0.55
+|   |   |   |   |   |   |   |   |--- value: [-0.11]
+|   |   |   |   |   |--- kSQI >  1.84
+|   |   |   |   |   |   |--- median <= 0.02
+|   |   |   |   |   |   |   |--- kSQI <= 7.99
+|   |   |   |   |   |   |   |   |--- kSQI <= 7.68
+|   |   |   |   |   |   |   |   |   |--- skewness <= -0.25
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 3.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  3.09
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- skewness >  -0.25
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.11]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |--- kSQI >  7.68
+|   |   |   |   |   |   |   |   |   |--- value: [-0.01]
+|   |   |   |   |   |   |   |--- kSQI >  7.99
+|   |   |   |   |   |   |   |   |--- skewness <= -1.58
+|   |   |   |   |   |   |   |   |   |--- value: [-0.01]
+|   |   |   |   |   |   |   |   |--- skewness >  -1.58
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.29
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.29
+|   |   |   |   |   |   |   |   |   |   |--- median <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- median >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- median >  0.02
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.34
+|   |   |   |   |   |   |   |   |--- skewness <= 0.25
+|   |   |   |   |   |   |   |   |   |--- median <= 0.04
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.23]
+|   |   |   |   |   |   |   |   |   |--- median >  0.04
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.57
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.30]
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.57
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- skewness >  0.25
+|   |   |   |   |   |   |   |   |   |--- value: [-0.17]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.34
+|   |   |   |   |   |   |   |   |--- value: [-0.14]
+|--- pSQI >  0.62
+|   |--- pSQI <= 0.70
+|   |   |--- skewness <= -1.96
+|   |   |   |--- distance_J_isoelectric <= 0.11
+|   |   |   |   |--- kSQI <= 16.00
+|   |   |   |   |   |--- distance_J_isoelectric <= 0.05
+|   |   |   |   |   |   |--- distance_J_isoelectric <= -0.02
+|   |   |   |   |   |   |   |--- kSQI <= 10.64
+|   |   |   |   |   |   |   |   |--- kSQI <= 5.66
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- kSQI >  5.66
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 8.15
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.15
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.10]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.15
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- kSQI >  8.15
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.19]
+|   |   |   |   |   |   |   |--- kSQI >  10.64
+|   |   |   |   |   |   |   |   |--- kSQI <= 12.56
+|   |   |   |   |   |   |   |   |   |--- value: [0.27]
+|   |   |   |   |   |   |   |   |--- kSQI >  12.56
+|   |   |   |   |   |   |   |   |   |--- value: [0.22]
+|   |   |   |   |   |   |--- distance_J_isoelectric >  -0.02
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.01
+|   |   |   |   |   |   |   |   |--- kSQI <= 5.74
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- kSQI >  5.74
+|   |   |   |   |   |   |   |   |   |--- skewness <= -2.76
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.02]
+|   |   |   |   |   |   |   |   |   |--- skewness >  -2.76
+|   |   |   |   |   |   |   |   |   |   |--- median <= 0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- median >  0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.01
+|   |   |   |   |   |   |   |   |--- kSQI <= 7.17
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- kSQI >  7.17
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.02
+|   |   |   |   |   |   |   |   |   |   |--- median <= 0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- median >  0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.02
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |--- distance_J_isoelectric >  0.05
+|   |   |   |   |   |   |--- skewness <= -2.01
+|   |   |   |   |   |   |   |--- skewness <= -2.08
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.07
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.07
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.08
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.08
+|   |   |   |   |   |   |   |   |   |   |--- average <= -0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- average >  -0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |--- skewness >  -2.08
+|   |   |   |   |   |   |   |   |--- skewness <= -2.04
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- skewness >  -2.04
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.07
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.07
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.07]
+|   |   |   |   |   |   |--- skewness >  -2.01
+|   |   |   |   |   |   |   |--- skewness <= -2.00
+|   |   |   |   |   |   |   |   |--- value: [-0.01]
+|   |   |   |   |   |   |   |--- skewness >  -2.00
+|   |   |   |   |   |   |   |   |--- value: [-0.06]
+|   |   |   |   |--- kSQI >  16.00
+|   |   |   |   |   |--- distance_J_isoelectric <= 0.04
+|   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |--- distance_J_isoelectric >  0.04
+|   |   |   |   |   |   |--- distance_J_isoelectric <= 0.08
+|   |   |   |   |   |   |   |--- pSQI <= 0.66
+|   |   |   |   |   |   |   |   |--- median <= 0.01
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- median >  0.01
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 17.82
+|   |   |   |   |   |   |   |   |   |   |--- average <= -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |   |   |   |--- average >  -0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- kSQI >  17.82
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |--- pSQI >  0.66
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.67
+|   |   |   |   |   |   |   |   |   |--- skewness <= -3.83
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.08
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.05]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.08
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- skewness >  -3.83
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.67
+|   |   |   |   |   |   |   |   |   |--- median <= 0.01
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- median >  0.01
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= -4.18
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  -4.18
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |--- distance_J_isoelectric >  0.08
+|   |   |   |   |   |   |   |--- pSQI <= 0.66
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.64
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.09
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.09
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= -3.57
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.04]
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  -3.57
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |--- pSQI >  0.64
+|   |   |   |   |   |   |   |   |   |--- median <= 0.00
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |--- median >  0.00
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |--- pSQI >  0.66
+|   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |--- distance_J_isoelectric >  0.11
+|   |   |   |   |--- median <= 0.10
+|   |   |   |   |   |--- median <= 0.00
+|   |   |   |   |   |   |--- median <= -0.02
+|   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |--- median >  -0.02
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.23
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.68
+|   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.68
+|   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.23
+|   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |--- median >  0.00
+|   |   |   |   |   |   |--- median <= 0.03
+|   |   |   |   |   |   |   |--- pSQI <= 0.64
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.63
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 15.45
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.12
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.05]
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.12
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- kSQI >  15.45
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.03]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.63
+|   |   |   |   |   |   |   |   |   |--- average <= -0.00
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.06]
+|   |   |   |   |   |   |   |   |   |--- average >  -0.00
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |--- pSQI >  0.64
+|   |   |   |   |   |   |   |   |--- average <= 0.01
+|   |   |   |   |   |   |   |   |   |--- median <= 0.01
+|   |   |   |   |   |   |   |   |   |   |--- median <= 0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- median >  0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- median >  0.01
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.18
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.18
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |--- average >  0.01
+|   |   |   |   |   |   |   |   |   |--- std <= 0.22
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.25
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.25
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.03]
+|   |   |   |   |   |   |   |   |   |--- std >  0.22
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.10]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.12]
+|   |   |   |   |   |   |--- median >  0.03
+|   |   |   |   |   |   |   |--- median <= 0.05
+|   |   |   |   |   |   |   |   |--- std <= 0.20
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.19
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.63
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.10]
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.63
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.19
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.03]
+|   |   |   |   |   |   |   |   |--- std >  0.20
+|   |   |   |   |   |   |   |   |   |--- pSQI <= 0.69
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.12]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.13]
+|   |   |   |   |   |   |   |   |   |--- pSQI >  0.69
+|   |   |   |   |   |   |   |   |   |   |--- average <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.02]
+|   |   |   |   |   |   |   |   |   |   |--- average >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.12]
+|   |   |   |   |   |   |   |--- median >  0.05
+|   |   |   |   |   |   |   |   |--- std <= 0.18
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.18
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.13
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.18
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.10]
+|   |   |   |   |   |   |   |   |--- std >  0.18
+|   |   |   |   |   |   |   |   |   |--- skewness <= -2.46
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- skewness >  -2.46
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |--- median >  0.10
+|   |   |   |   |   |--- skewness <= -2.40
+|   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |--- skewness >  -2.40
+|   |   |   |   |   |   |--- value: [0.00]
+|   |   |--- skewness >  -1.96
+|   |   |   |--- median <= -0.16
+|   |   |   |   |--- distance_J_isoelectric <= -0.59
+|   |   |   |   |   |--- kSQI <= -1.24
+|   |   |   |   |   |   |--- std <= 0.26
+|   |   |   |   |   |   |   |--- value: [0.61]
+|   |   |   |   |   |   |--- std >  0.26
+|   |   |   |   |   |   |   |--- value: [0.60]
+|   |   |   |   |   |--- kSQI >  -1.24
+|   |   |   |   |   |   |--- value: [0.67]
+|   |   |   |   |--- distance_J_isoelectric >  -0.59
+|   |   |   |   |   |--- kSQI <= 1.70
+|   |   |   |   |   |   |--- average <= -0.05
+|   |   |   |   |   |   |   |--- value: [0.04]
+|   |   |   |   |   |   |--- average >  -0.05
+|   |   |   |   |   |   |   |--- std <= 0.35
+|   |   |   |   |   |   |   |   |--- average <= -0.00
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.19
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.34]
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.19
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.17
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.32]
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.17
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.34]
+|   |   |   |   |   |   |   |   |--- average >  -0.00
+|   |   |   |   |   |   |   |   |   |--- std <= 0.33
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.49]
+|   |   |   |   |   |   |   |   |   |--- std >  0.33
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.32]
+|   |   |   |   |   |   |   |--- std >  0.35
+|   |   |   |   |   |   |   |   |--- value: [0.23]
+|   |   |   |   |   |--- kSQI >  1.70
+|   |   |   |   |   |   |--- value: [0.24]
+|   |   |   |--- median >  -0.16
+|   |   |   |   |--- kSQI <= 19.72
+|   |   |   |   |   |--- median <= -0.07
+|   |   |   |   |   |   |--- pSQI <= 0.63
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.34
+|   |   |   |   |   |   |   |   |--- std <= 0.22
+|   |   |   |   |   |   |   |   |   |--- value: [0.52]
+|   |   |   |   |   |   |   |   |--- std >  0.22
+|   |   |   |   |   |   |   |   |   |--- value: [0.62]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.34
+|   |   |   |   |   |   |   |   |--- skewness <= 1.62
+|   |   |   |   |   |   |   |   |   |--- skewness <= 1.26
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.33]
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.04
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.04]
+|   |   |   |   |   |   |   |   |   |--- skewness >  1.26
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.21]
+|   |   |   |   |   |   |   |   |--- skewness >  1.62
+|   |   |   |   |   |   |   |   |   |--- value: [0.09]
+|   |   |   |   |   |   |--- pSQI >  0.63
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.20
+|   |   |   |   |   |   |   |   |--- skewness <= 1.21
+|   |   |   |   |   |   |   |   |   |--- kSQI <= -1.13
+|   |   |   |   |   |   |   |   |   |   |--- average <= 0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- average >  0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- kSQI >  -1.13
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.44
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.44
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- skewness >  1.21
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 1.70
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.33]
+|   |   |   |   |   |   |   |   |   |--- kSQI >  1.70
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.34]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.20
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.14
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 3.13
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.10
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- kSQI >  3.13
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.14
+|   |   |   |   |   |   |   |   |   |--- skewness <= 1.83
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.04]
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- skewness >  1.83
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.13]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |--- median >  -0.07
+|   |   |   |   |   |   |--- distance_J_isoelectric <= 0.12
+|   |   |   |   |   |   |   |--- kSQI <= 0.67
+|   |   |   |   |   |   |   |   |--- median <= 0.02
+|   |   |   |   |   |   |   |   |   |--- median <= -0.01
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= -0.29
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  -0.29
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |   |--- median >  -0.01
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= -0.57
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.11]
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  -0.57
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |--- median >  0.02
+|   |   |   |   |   |   |   |   |   |--- kSQI <= -0.49
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.10]
+|   |   |   |   |   |   |   |   |   |--- kSQI >  -0.49
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |--- kSQI >  0.67
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.24
+|   |   |   |   |   |   |   |   |   |--- value: [0.19]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.24
+|   |   |   |   |   |   |   |   |   |--- skewness <= 1.95
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.03
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 16
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.03
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |--- skewness >  1.95
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 2.94
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  2.94
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |--- distance_J_isoelectric >  0.12
+|   |   |   |   |   |   |   |--- pSQI <= 0.67
+|   |   |   |   |   |   |   |   |--- std <= 0.24
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 12.13
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= -0.61
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 18
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  -0.61
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |--- kSQI >  12.13
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 2.89
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  2.89
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |--- std >  0.24
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.35
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.46]
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.35
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.30
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.30
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.23]
+|   |   |   |   |   |   |   |--- pSQI >  0.67
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.69
+|   |   |   |   |   |   |   |   |   |--- std <= 0.20
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.28
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.28
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |--- std >  0.20
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 4.38
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  4.38
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |--- pSQI >  0.69
+|   |   |   |   |   |   |   |   |   |--- median <= -0.04
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.21
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |--- median >  -0.04
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 2.20
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 16
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  2.20
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |--- kSQI >  19.72
+|   |   |   |   |   |--- std <= 0.15
+|   |   |   |   |   |   |--- distance_J_isoelectric <= 0.02
+|   |   |   |   |   |   |   |--- median <= -0.02
+|   |   |   |   |   |   |   |   |--- value: [-0.10]
+|   |   |   |   |   |   |   |--- median >  -0.02
+|   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |--- distance_J_isoelectric >  0.02
+|   |   |   |   |   |   |   |--- pSQI <= 0.68
+|   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |--- pSQI >  0.68
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.69
+|   |   |   |   |   |   |   |   |   |--- value: [-0.18]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.69
+|   |   |   |   |   |   |   |   |   |--- value: [-0.09]
+|   |   |   |   |   |--- std >  0.15
+|   |   |   |   |   |   |--- average <= -0.02
+|   |   |   |   |   |   |   |--- skewness <= 3.93
+|   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |--- skewness >  3.93
+|   |   |   |   |   |   |   |   |--- value: [-0.05]
+|   |   |   |   |   |   |--- average >  -0.02
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.16
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.03
+|   |   |   |   |   |   |   |   |   |--- value: [-0.03]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.03
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 23.80
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.67
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- kSQI >  23.80
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.16
+|   |   |   |   |   |   |   |   |--- value: [0.00]
+|   |--- pSQI >  0.70
+|   |   |--- std <= 1.11
+|   |   |   |--- median <= -0.15
+|   |   |   |   |--- pSQI <= 0.84
+|   |   |   |   |   |--- distance_J_isoelectric <= -0.48
+|   |   |   |   |   |   |--- kSQI <= 2.12
+|   |   |   |   |   |   |   |--- pSQI <= 0.73
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.71
+|   |   |   |   |   |   |   |   |   |--- value: [0.67]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.71
+|   |   |   |   |   |   |   |   |   |--- value: [0.49]
+|   |   |   |   |   |   |   |--- pSQI >  0.73
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.94
+|   |   |   |   |   |   |   |   |   |--- value: [0.53]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.94
+|   |   |   |   |   |   |   |   |   |--- median <= -0.19
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= -1.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.70]
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  -1.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.68]
+|   |   |   |   |   |   |   |   |   |--- median >  -0.19
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.17
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.68]
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.17
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.58]
+|   |   |   |   |   |   |--- kSQI >  2.12
+|   |   |   |   |   |   |   |--- value: [0.25]
+|   |   |   |   |   |--- distance_J_isoelectric >  -0.48
+|   |   |   |   |   |   |--- distance_J_isoelectric <= -0.38
+|   |   |   |   |   |   |   |--- kSQI <= -1.14
+|   |   |   |   |   |   |   |   |--- value: [0.45]
+|   |   |   |   |   |   |   |--- kSQI >  -1.14
+|   |   |   |   |   |   |   |   |--- value: [0.37]
+|   |   |   |   |   |   |--- distance_J_isoelectric >  -0.38
+|   |   |   |   |   |   |   |--- pSQI <= 0.75
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.08
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.16
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.29
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.29
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.16
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.11
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.16]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.08
+|   |   |   |   |   |   |   |   |   |--- skewness <= 2.33
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.40
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.40
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- skewness >  2.33
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.20]
+|   |   |   |   |   |   |   |--- pSQI >  0.75
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.80
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.20
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.76
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.76
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.20
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.79
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.79
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |--- pSQI >  0.80
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 0.45
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.34
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.52]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.34
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |--- kSQI >  0.45
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.17
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.17
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |--- pSQI >  0.84
+|   |   |   |   |   |--- kSQI <= 11.84
+|   |   |   |   |   |   |--- skewness <= 2.70
+|   |   |   |   |   |   |   |--- skewness <= 2.10
+|   |   |   |   |   |   |   |   |--- kSQI <= 2.21
+|   |   |   |   |   |   |   |   |   |--- std <= 0.26
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 1.55
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  1.55
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.80]
+|   |   |   |   |   |   |   |   |   |--- std >  0.26
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.85
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.30]
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.85
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |--- kSQI >  2.21
+|   |   |   |   |   |   |   |   |   |--- median <= -0.20
+|   |   |   |   |   |   |   |   |   |   |--- average <= -0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- average >  -0.06
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- median >  -0.20
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.54
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.64]
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.54
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |--- skewness >  2.10
+|   |   |   |   |   |   |   |   |--- median <= -0.20
+|   |   |   |   |   |   |   |   |   |--- skewness <= 2.49
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.36]
+|   |   |   |   |   |   |   |   |   |--- skewness >  2.49
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.20]
+|   |   |   |   |   |   |   |   |--- median >  -0.20
+|   |   |   |   |   |   |   |   |   |--- value: [0.23]
+|   |   |   |   |   |   |--- skewness >  2.70
+|   |   |   |   |   |   |   |--- pSQI <= 0.92
+|   |   |   |   |   |   |   |   |--- skewness <= 2.81
+|   |   |   |   |   |   |   |   |   |--- value: [0.05]
+|   |   |   |   |   |   |   |   |--- skewness >  2.81
+|   |   |   |   |   |   |   |   |   |--- value: [0.15]
+|   |   |   |   |   |   |   |--- pSQI >  0.92
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.11
+|   |   |   |   |   |   |   |   |   |--- value: [0.20]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.11
+|   |   |   |   |   |   |   |   |   |--- median <= -0.16
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 3.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.19]
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  3.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.21]
+|   |   |   |   |   |   |   |   |   |--- median >  -0.16
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.16]
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.16
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.17]
+|   |   |   |   |   |--- kSQI >  11.84
+|   |   |   |   |   |   |--- pSQI <= 0.93
+|   |   |   |   |   |   |   |--- value: [-0.06]
+|   |   |   |   |   |   |--- pSQI >  0.93
+|   |   |   |   |   |   |   |--- std <= 0.42
+|   |   |   |   |   |   |   |   |--- value: [-0.17]
+|   |   |   |   |   |   |   |--- std >  0.42
+|   |   |   |   |   |   |   |   |--- pSQI <= 0.94
+|   |   |   |   |   |   |   |   |   |--- value: [-0.28]
+|   |   |   |   |   |   |   |   |--- pSQI >  0.94
+|   |   |   |   |   |   |   |   |   |--- value: [-0.24]
+|   |   |   |--- median >  -0.15
+|   |   |   |   |--- average <= 0.06
+|   |   |   |   |   |--- distance_J_isoelectric <= 0.02
+|   |   |   |   |   |   |--- distance_J_isoelectric <= -1.12
+|   |   |   |   |   |   |   |--- value: [-0.23]
+|   |   |   |   |   |   |--- distance_J_isoelectric >  -1.12
+|   |   |   |   |   |   |   |--- pSQI <= 0.78
+|   |   |   |   |   |   |   |   |--- median <= -0.02
+|   |   |   |   |   |   |   |   |   |--- skewness <= 1.06
+|   |   |   |   |   |   |   |   |   |   |--- median <= -0.07
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- median >  -0.07
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |   |   |   |   |   |--- skewness >  1.06
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.20
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.20
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |   |   |--- median >  -0.02
+|   |   |   |   |   |   |   |   |   |--- std <= 0.20
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 0.63
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 20
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  0.63
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 20
+|   |   |   |   |   |   |   |   |   |--- std >  0.20
+|   |   |   |   |   |   |   |   |   |   |--- average <= -0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |   |--- average >  -0.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |--- pSQI >  0.78
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.69
+|   |   |   |   |   |   |   |   |   |--- median <= -0.08
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 1.76
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 4
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  1.76
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 2
+|   |   |   |   |   |   |   |   |   |--- median >  -0.08
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.41
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.41
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.09]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.69
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= -0.47
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.25
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.25
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  -0.47
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= -2.71
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 16
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  -2.71
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 22
+|   |   |   |   |   |--- distance_J_isoelectric >  0.02
+|   |   |   |   |   |   |--- skewness <= -0.34
+|   |   |   |   |   |   |   |--- kSQI <= 1.61
+|   |   |   |   |   |   |   |   |--- skewness <= -0.68
+|   |   |   |   |   |   |   |   |   |--- skewness <= -1.17
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.80
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.80
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |--- skewness >  -1.17
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.32
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 15
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.32
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |--- skewness >  -0.68
+|   |   |   |   |   |   |   |   |   |--- std <= 0.26
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 1.03
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  1.03
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |--- std >  0.26
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.36
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.36
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |--- kSQI >  1.61
+|   |   |   |   |   |   |   |   |--- skewness <= -3.14
+|   |   |   |   |   |   |   |   |   |--- average <= 0.01
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 14.86
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  14.86
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 8
+|   |   |   |   |   |   |   |   |   |--- average >  0.01
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 13.73
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  13.73
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 11
+|   |   |   |   |   |   |   |   |--- skewness >  -3.14
+|   |   |   |   |   |   |   |   |   |--- skewness <= -1.87
+|   |   |   |   |   |   |   |   |   |   |--- average <= 0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- average >  0.00
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 14
+|   |   |   |   |   |   |   |   |   |--- skewness >  -1.87
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= -1.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 20
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  -1.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 19
+|   |   |   |   |   |   |--- skewness >  -0.34
+|   |   |   |   |   |   |   |--- skewness <= 0.28
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.55
+|   |   |   |   |   |   |   |   |   |--- std <= 0.15
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.97
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 13
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.97
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.31]
+|   |   |   |   |   |   |   |   |   |--- std >  0.15
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 5.40
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  5.40
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.55
+|   |   |   |   |   |   |   |   |   |--- median <= 0.02
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  0.23
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.40]
+|   |   |   |   |   |   |   |   |   |--- median >  0.02
+|   |   |   |   |   |   |   |   |   |   |--- average <= 0.03
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- average >  0.03
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.34]
+|   |   |   |   |   |   |   |--- skewness >  0.28
+|   |   |   |   |   |   |   |   |--- median <= -0.14
+|   |   |   |   |   |   |   |   |   |--- skewness <= 2.66
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 1.36
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  1.36
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 7
+|   |   |   |   |   |   |   |   |   |--- skewness >  2.66
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.44
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 9
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.44
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 3
+|   |   |   |   |   |   |   |   |--- median >  -0.14
+|   |   |   |   |   |   |   |   |   |--- skewness <= 3.92
+|   |   |   |   |   |   |   |   |   |   |--- kSQI <= 16.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 32
+|   |   |   |   |   |   |   |   |   |   |--- kSQI >  16.01
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 21
+|   |   |   |   |   |   |   |   |   |--- skewness >  3.92
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.12
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.12
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 17
+|   |   |   |   |--- average >  0.06
+|   |   |   |   |   |--- std <= 0.50
+|   |   |   |   |   |   |--- pSQI <= 0.74
+|   |   |   |   |   |   |   |--- std <= 0.35
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.15
+|   |   |   |   |   |   |   |   |   |--- average <= 0.07
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.08]
+|   |   |   |   |   |   |   |   |   |--- average >  0.07
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.28]
+|   |   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.15
+|   |   |   |   |   |   |   |   |   |--- value: [-0.21]
+|   |   |   |   |   |   |   |--- std >  0.35
+|   |   |   |   |   |   |   |   |--- value: [-0.01]
+|   |   |   |   |   |   |--- pSQI >  0.74
+|   |   |   |   |   |   |   |--- distance_J_isoelectric <= 0.38
+|   |   |   |   |   |   |   |   |--- median <= -0.03
+|   |   |   |   |   |   |   |   |   |--- pSQI <= 0.92
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.87
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 10
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.87
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.33]
+|   |   |   |   |   |   |   |   |   |--- pSQI >  0.92
+|   |   |   |   |   |   |   |   |   |   |--- value: [0.82]
+|   |   |   |   |   |   |   |   |--- median >  -0.03
+|   |   |   |   |   |   |   |   |   |--- std <= 0.27
+|   |   |   |   |   |   |   |   |   |   |--- std <= 0.14
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [0.24]
+|   |   |   |   |   |   |   |   |   |   |--- std >  0.14
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 5
+|   |   |   |   |   |   |   |   |   |--- std >  0.27
+|   |   |   |   |   |   |   |   |   |   |--- pSQI <= 0.81
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |   |   |   |--- pSQI >  0.81
+|   |   |   |   |   |   |   |   |   |   |   |--- truncated branch of depth 6
+|   |   |   |   |   |   |   |--- distance_J_isoelectric >  0.38
+|   |   |   |   |   |   |   |   |--- median <= 0.11
+|   |   |   |   |   |   |   |   |   |--- median <= 0.01
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.07]
+|   |   |   |   |   |   |   |   |   |--- median >  0.01
+|   |   |   |   |   |   |   |   |   |   |--- skewness <= 1.01
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.26]
+|   |   |   |   |   |   |   |   |   |   |--- skewness >  1.01
+|   |   |   |   |   |   |   |   |   |   |   |--- value: [-0.19]
+|   |   |   |   |   |   |   |   |--- median >  0.11
+|   |   |   |   |   |   |   |   |   |--- kSQI <= 0.31
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.46]
+|   |   |   |   |   |   |   |   |   |--- kSQI >  0.31
+|   |   |   |   |   |   |   |   |   |   |--- value: [-0.22]
+|   |   |   |   |   |--- std >  0.50
+|   |   |   |   |   |   |--- pSQI <= 0.94
+|   |   |   |   |   |   |   |--- average <= 0.16
+|   |   |   |   |   |   |   |   |--- value: [0.21]
+|   |   |   |   |   |   |   |--- average >  0.16
+|   |   |   |   |   |   |   |   |--- value: [-0.12]
+|   |   |   |   |   |   |--- pSQI >  0.94
+|   |   |   |   |   |   |   |--- value: [0.09]
+|   |   |--- std >  1.11
+|   |   |   |--- distance_J_isoelectric <= 3.07
+|   |   |   |   |--- average <= 0.35
+|   |   |   |   |   |--- kSQI <= 3.67
+|   |   |   |   |   |   |--- value: [0.70]
+|   |   |   |   |   |--- kSQI >  3.67
+|   |   |   |   |   |   |--- value: [0.58]
+|   |   |   |   |--- average >  0.35
+|   |   |   |   |   |--- value: [0.74]
+|   |   |   |--- distance_J_isoelectric >  3.07
+|   |   |   |   |--- value: [0.80]
