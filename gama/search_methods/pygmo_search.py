@@ -9,6 +9,9 @@ from gama.genetic_programming.compilers.scikitlearn import compile_individual
 from gama.genetic_programming.components.primitive_node import PrimitiveNode
 from gama.genetic_programming.components.primitive import Primitive
 from gama.genetic_programming.components.terminal import Terminal
+from gama.search_methods.topologies_creation import obtain_topology
+import networkx as nx
+import matplotlib.pyplot as plt
 # import multiprocessing
 # from multiprocessing import Process, freeze_support
 
@@ -366,30 +369,14 @@ def pygmo_serach(
                     # Changes from here
                     r_policy = pg.r_policy(pg.fair_replace(rate=0.5)) # Share 50% of the individulas en each island
                     s_policy = pg.s_policy(udsp=pg.select_best())
-                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.fully_connected()))
                     archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
-                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.free_form()))
-                    # archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy) # unconnected
-                    # broadcast = pg.migration_type(1) # 1 = Broadcast type
-                    # archi.set_migration_type(broadcast)
-
                     isl1 = pg.island(algo = pg.algorithm(pg.de(gen = iters)), pop=pop)
-                    isl2 = pg.island(algo = pg.algorithm(pg.sade(gen = iters)), pop=pop)
-                    isl3 = pg.island(algo = pg.algorithm(pg.de1220(gen = iters)), pop=pop)
-                    isl4 = pg.island(algo = pg.algorithm(pg.gwo(gen = iters)), pop=pop)
-                    isl5 = pg.island(algo = pg.algorithm(pg.pso(gen = iters)), pop=pop)
-                    isl6 = pg.island(algo = pg.algorithm(pg.pso_gen(gen = iters)), pop=pop)
-                    isl7 = pg.island(algo = pg.algorithm(pg.sea(gen = iters)), pop=pop)
-                    isl8 = pg.island(algo = pg.algorithm(pg.bee_colony(gen = iters)), pop=pop)
-                    isls = [isl1, isl2, isl3, isl4, isl5, isl6, isl7, isl8]
-
+                    isls = [isl1 for _ in range(16)]
                     for isl in isls:
                         archi.push_back(isl)
-                    # print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
-
-                    #archi = pg.archipelago(n=islands, algo=algo, pop=pop, t=pg.topology(pg.ring()))
-                    # print("CREATION OF THE ARCHIPELAGO, IT WILL START THE EVOLUTION IN PARALLEL")
-                    # print(archi)
+                    G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
+                    this_topology = pg.free_form(G)
+                    archi.set_topology(this_topology)
                     archi.get_champions_f()
                     # print(archi.get_champions_f())
                     archi.evolve()
@@ -470,17 +457,13 @@ def pygmo_serach(
                     # archi.set_migration_type(broadcast)
 
                     isl1 = pg.island(algo=pg.algorithm(pg.de(gen=iters)), pop=pop)
-                    isl2 = pg.island(algo=pg.algorithm(pg.sade(gen=iters)), pop=pop)
-                    isl3 = pg.island(algo=pg.algorithm(pg.de1220(gen=iters)), pop=pop)
-                    isl4 = pg.island(algo=pg.algorithm(pg.gwo(gen=iters)), pop=pop)
-                    isl5 = pg.island(algo=pg.algorithm(pg.pso(gen=iters)), pop=pop)
-                    isl6 = pg.island(algo=pg.algorithm(pg.pso_gen(gen=iters)), pop=pop)
-                    isl7 = pg.island(algo=pg.algorithm(pg.sea(gen=iters)), pop=pop)
-                    isl8 = pg.island(algo=pg.algorithm(pg.bee_colony(gen=iters)), pop=pop)
-                    isls = [isl1, isl2, isl3, isl4, isl5, isl6, isl7, isl8]
-
+                    isls = [isl1 for _ in range(16)]
                     for isl in isls:
                         archi.push_back(isl)
+                    G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
+                    this_topology = pg.free_form(G)
+                    archi.set_topology(this_topology)
+
                     # print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
 
                     # archi = pg.archipelago(n=islands, algo=algo, pop=pop, t=pg.topology(pg.ring()))
@@ -511,8 +494,8 @@ def pygmo_serach(
                         if rung==max_rung:
                             output.append(new_ind)
 
-        except:
-            print("Keyboard Interruption")
+        except Exception as e:
+            print(e)
 
 
     return output
