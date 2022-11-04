@@ -11,7 +11,6 @@ from gama.genetic_programming.components.primitive import Primitive
 from gama.genetic_programming.components.terminal import Terminal
 from gama.search_methods.topologies_creation import obtain_topology
 import networkx as nx
-import matplotlib.pyplot as plt
 # import multiprocessing
 # from multiprocessing import Process, freeze_support
 
