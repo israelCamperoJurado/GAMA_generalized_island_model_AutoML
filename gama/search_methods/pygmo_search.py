@@ -374,8 +374,8 @@ def pygmo_serach(
                     for isl in isls:
                         archi.push_back(isl)
                     #G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
-                    G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
-                    #G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
+                    #G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
+                    G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
                     print('Added new topology ...')
                     this_topology = pg.free_form(G)
                     archi.set_topology(this_topology)
@@ -463,8 +463,8 @@ def pygmo_serach(
                     for isl in isls:
                         archi.push_back(isl)
                     #G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
-                    G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
-                    #G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
+                    #G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
+                    G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
                     this_topology = pg.free_form(G)
                     archi.set_topology(this_topology)
 
