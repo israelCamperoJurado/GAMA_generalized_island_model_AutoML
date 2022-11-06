@@ -378,7 +378,7 @@ def pygmo_serach(
                     #G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
                     print('Added new topology ...')
                     #this_topology = pg.free_form(G)
-                    this_topology = pg.topology(pg.fully_connected(len(archi)))
+                    this_topology = pg.topology(pg.ring(len(archi)))
                     archi.set_topology(this_topology)
                     archi.get_champions_f()
                     # print(archi.get_champions_f())
@@ -467,7 +467,7 @@ def pygmo_serach(
                     #G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
                     #G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
                     #this_topology = pg.free_form(G)
-                    this_topology = pg.topology(pg.fully_connected(len(archi)))
+                    this_topology = pg.topology(pg.ring(len(archi)))
                     archi.set_topology(this_topology)
 
                     # print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
