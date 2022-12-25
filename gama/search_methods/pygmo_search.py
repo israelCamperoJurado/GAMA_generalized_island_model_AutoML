@@ -4,20 +4,8 @@ Created on Wed Sep 15 17:28:28 2021
 
 @author: 20210595
 """
-from gama.genetic_programming.components.individual import Individual
-from gama.genetic_programming.compilers.scikitlearn import compile_individual
-from gama.genetic_programming.components.primitive_node import PrimitiveNode
-from gama.genetic_programming.components.primitive import Primitive
-from gama.genetic_programming.components.terminal import Terminal
 from gama.search_methods.topologies_creation import obtain_topology
-import networkx as nx
-# import multiprocessing
-# from multiprocessing import Process, freeze_support
 
-
-# freeze_support()
-
-# Packages for pygmo
 import os
 import pickle
 import uuid
@@ -27,13 +15,13 @@ import numpy as np
 import pygmo as pg
 from pygmo import *
 from gama.configuration.bounds_pygmo import (
-    upperBound, 
-    lowerBound, 
+    upperBound,
+    lowerBound,
     vector_support,
     count_aux
-    ) 
+)
 from gama.configuration.create_individuals import ValuesSearchSpace, IndividuoVector
-import stopit # Is this the problem?
+import stopit  # Is this the problem?
 
 import logging
 from functools import partial
@@ -49,7 +37,8 @@ from gama.search_methods.base_search import BaseSearch
 from gama.utilities.generic.async_evaluator import AsyncEvaluator
 
 log = logging.getLogger(__name__)
-    
+
+
 class SearchPygmo(BaseSearch):
     """ Perform asynchronous evolutionary optimization.
     Parameters
@@ -64,14 +53,14 @@ class SearchPygmo(BaseSearch):
     """
 
     def __init__(
-        self,
-        population_size: Optional[int] = None,
-        max_n_evaluations: Optional[int] = None,
-        restart_callback: Optional[Callable[[], bool]] = None,
-        reduction_factor: Optional[int] = None,
-        minimum_resource: Optional[Tuple[int, float]] = None,
-        maximum_resource: Optional[Tuple[int, float]] = None,
-        minimum_early_stopping_rate: Optional[int] = None,
+            self,
+            population_size: Optional[int] = None,
+            max_n_evaluations: Optional[int] = None,
+            restart_callback: Optional[Callable[[], bool]] = None,
+            reduction_factor: Optional[int] = None,
+            minimum_resource: Optional[Tuple[int, float]] = None,
+            maximum_resource: Optional[Tuple[int, float]] = None,
+            minimum_early_stopping_rate: Optional[int] = None,
     ):
         super().__init__()
         # maps hyperparameter -> (set value, default)
@@ -85,14 +74,13 @@ class SearchPygmo(BaseSearch):
             minimum_early_stopping_rate=(minimum_early_stopping_rate, 0),
         )
         self.output = []
-        
+
         path_use = os.getcwd()
         path = path_use.replace(os.sep, '/')
         name_folder = "pickle_gama_" + str(uuid.uuid4())
         path = path + "/" + name_folder
         self.path = path
         print("search method", self.path)
-        
 
         def get_parent(evaluation, n) -> str:
             """ retrieves the nth parent if it exists, '' otherwise. """
@@ -118,53 +106,47 @@ class SearchPygmo(BaseSearch):
                 f"contains {len(y)} samples. Reverting to default (1.0) instead."
             )
             self._hyperparameters["maximum_resource"] = (None, default)
-        
 
     def search(self, operations: OperatorSet, start_candidates: List[Individual], time_limit: float):
         self.output = pygmo_serach(
             operations, self.output, start_candidates, self.path, time_limit, **self.hyperparameters
-        ) 
+        )
 
-def top(elementos = 10, path=None):
+
+def top(elementos=10, path=None):
     lista_top = []
     for root, dirs, files, in os.walk(path):
         for file in files:
             if file.endswith(".pkl"):
-                if (file!="warm_start"):
+                if (file != "warm_start"):
                     new_f_path = path + file
                     try:
                         new_lista = pickle.load(open(new_f_path, "rb"))
                     except:
                         new_lista = []
                     lista_top = lista_top + new_lista
-    #print("len lista_top", len(lista_top))
     f_vectors = [new_individual.fitness.values[0] for new_individual in lista_top]
     for i in range(len(f_vectors)):
         if f_vectors[i] == -np.inf:
             f_vectors[i] = -10000
     f_vectors = np.array(f_vectors)
-    #print("Valores para ordenar del fitness", f_vectors)
     if len(f_vectors) > elementos:
-        #indices_best = f_vectors.argsort()[:10]
         indices_best = f_vectors.argsort()[-elementos:][::-1]
         indices_best = indices_best.tolist()
-        #print("indices_best", indices_best)
         lista_ind_numpy = np.array(lista_top)
         lista_to_return = lista_ind_numpy[indices_best]
-        lista_to_return = lista_to_return.tolist()
-        #print("lista_to_return", lista_to_return)
-        #print("type lista_to_return", type(lista_to_return))
-        return lista_to_return
+        lista_to_return = lista_to_return
+        return lista_to_return.tolist()
     elif len(f_vectors) > 1:
         indices_best = f_vectors.argsort()[::-1]
         indices_best = indices_best.tolist()
-        print("indices_best", indices_best)
         lista_ind_numpy = np.array(lista_top)
         lista_to_return = lista_ind_numpy[indices_best]
         lista_to_return = lista_to_return.tolist()
     else:
-        lista_to_return =[]
+        lista_to_return = []
         return lista_to_return
+
 
 class AutoMLProblem(object):
     def __init__(self, ops, folder_name, rung, max_rung):
@@ -175,12 +157,9 @@ class AutoMLProblem(object):
         self.old_loss = 1000
         self.new_loss = None
         self.folder_name = folder_name
-        # self.evaluate = evaluate
         self.rung = rung
         self.max_rung = max_rung
-        # self.rung_resources = rung_resources
-        # self.time_penalty = time_penalty
-        
+
     # Define objectives
     def fitness(self, x):
         instance_individual = ValuesSearchSpace(x)
@@ -188,11 +167,10 @@ class AutoMLProblem(object):
         if individual_from_x == None:
             f1 = -1000
         else:
-            # try:
             if individual_from_x != None:
-                # print("individual_from_x", individual_from_x)
                 individual_to_use = self._loss_function(self.operator, individual_from_x)
                 f1 = individual_to_use.fitness.values[0]
+                f2 = len(individual_to_use.pipeline)
                 if f1 == -np.inf:
                     f1 = -1000
                 list_save_ind = [individual_to_use]
@@ -202,102 +180,65 @@ class AutoMLProblem(object):
                     pickle.dump(list_save_ind, f)
             else:
                 f1 = -1000
-            # except:
-            #     f1 = -1000
-        return [-f1]
-    
+        return [-f1, f2] # -f1 because is neg_log_loss (higher better) and f2 because is len(pipeline) (lower better), In pagmo minimization is always assumed
+
+    # Return number of objectives
+    def get_nobj(self):
+        return 2
+
     # Define bounds
     def get_bounds(self):
         lower = lowerBound
         upper = upperBound
         return (lower, upper)
-    
+
     def _loss_function(self, ops: OperatorSet, ind1: Individual) -> Individual:
-        # print("time penalty", self.time_penalty)
-        # print("self.rung", self.rung)
-        # print("self.rung_resources[self.rung]", self.rung_resources[self.rung])
-        # print("self.evaluate", self.evaluate)
-        # evaluate = self.evaluate
         rung = self.rung
-        # print("rung", rung)
-        # subsample=self.rung_resources[self.rung]
-        # timeout=(10 + (self.time_penalty * 600))
-        # print("Hi Pieter", **AsyncEvaluator.defaults)
         result = evaluate_on_rung(
             ind1, self.rung, self.max_rung, ops.evaluate
         )
-        # print("result _ loss_function", result)
-        # print("type result _ loss_function", type(result))
-        # result = ops.evaluate(
-        #                     ind1,
-        #                     rung,
-        #                     subsample,
-        #                     timeout=timeout,
-        #                     evaluate_pipeline=evaluate
-        #                       )
         return result.individual
-    
-    # def _loss_function(self, ops: OperatorSet, ind1: Individual) -> Individual:
-    #     #individual = ops.evaluate(ind1).individual
-    #     print("Hi Pieter", **AsyncEvaluator.defaults)
-    #     #help(ops.evaluate)
-    #     result = ops.evaluate(ind1)
-    #     #result = ops.evaluate(ind1, **AsyncEvaluator.defaults)
-    #     return result.individual
-        
-        
-    
+
     # Return function name
     def get_name(self):
         return "AutoMLProblem"
- 
- 
+
+
 def pygmo_serach(
-    ops: OperatorSet,
-    output: List[Individual],
-    start_candidates: List[Individual],
-    path,
-    time_limit,
-    reduction_factor: int = 2,
-    minimum_resource: Union[int, float] = 0.125,
-    maximum_resource: Union[int, float] = 1.0,
-    minimum_early_stopping_rate: int = 0,
-    max_full_evaluations: Optional[int] = None,
-    restart_callback: Optional[Callable[[], bool]] = None,
-    max_n_evaluations: Optional[int] = None,
-    population_size: int = 50,
-    islands: int = 8,
-    iters: int = 10000,
+        ops: OperatorSet,
+        output: List[Individual],
+        start_candidates: List[Individual],
+        path,
+        time_limit,
+        reduction_factor: int = 2,
+        minimum_resource: Union[int, float] = 0.125,
+        maximum_resource: Union[int, float] = 1.0,
+        minimum_early_stopping_rate: int = 0,
+        max_full_evaluations: Optional[int] = None,
+        restart_callback: Optional[Callable[[], bool]] = None,
+        max_n_evaluations: Optional[int] = None,
+        population_size: int = 50,
+        islands: int = 8,
+        iters: int = 10000,
 ) -> List[Individual]:
+    #start_candidates = [start_candidates[i] for i in range(40)]
     if not isinstance(minimum_resource, type(maximum_resource)):
         raise ValueError("Currently minimum and maximum resource must same type.")
-    
+
     path = path
     os.makedirs(path, exist_ok=True)
-    
-    # print("maximum_resource", maximum_resource)
-     # Note that here we index the rungs by all possible rungs (0..ceil(log_eta(R/r))),
-    # and ignore the first minimum_early_stopping_rate rungs.
-    # This contrasts the paper where rung 0 refers to the first used one.
     max_rung = math.ceil(
         math.log(maximum_resource / minimum_resource, reduction_factor)
     )
-    # print("max_rung", max_rung)
     rungs = range(minimum_early_stopping_rate, max_rung + 1)
     rung_resources = {
         rung: min(minimum_resource * (reduction_factor ** rung), maximum_resource)
         for rung in rungs
     }
-
-    # print("evaluate", evaluate)
-    # Highest rungs first is how we typically iterate them
-    # Should we just use lists of lists/heaps instead?
     rung_individuals: Dict[int, List[Tuple[float, Individual]]] = {
         rung: [] for rung in reversed(rungs)
     }
-    
-    # print("rung_individuals", rung_individuals)
-    # print("type rung_individuals", type(rung_individuals))
+
     promoted_individuals: Dict[int, List[Individual]] = {
         rung: [] for rung in reversed(rungs)
     }
@@ -308,137 +249,105 @@ def pygmo_serach(
         result = ops.evaluate(individual)
         new_ind = result.individual
         loss = new_ind.fitness.values[0]
-        f_vectors.append(loss)
+        length_pipeline = len(new_ind.pipeline)
+        f_vectors.append([loss, length_pipeline])
         output.append(new_ind)
         with open(path_warm, 'wb') as f:
             pickle.dump(output, f)
-            
+
     x_vectors = []
     for i in output:
         instance_individual_to_vectors = IndividuoVector()
         new_vector = instance_individual_to_vectors(i)
         x_vectors.append(new_vector)
-                              
-    # print("START with pygmo")    
-    # algo = pg.algorithm(pg.de(gen = iters))
-    # individual, rung = get_job()
-    # time_penalty = rung_resources[rung] / max(rung_resources.values())
-    # print("individual from get_job", individual)
-    # print("rung from get_job", rung)
-    # print("time_penalty", time_penalty)
 
-
-    # for rung in rungs:
-    #     ops.evaluate = partial(ops.evaluate, subsample=rung_resources[rung])
-    #     # print("rungs", rungs)
-    #     evaluate = partial(
-    #         evaluate_on_rung, evaluate_individual=ops.evaluate, max_rung=max_rung
-    #     )
-
-    # print("previous time", time_limit)
-    # print("type time", type(time_limit))
     new_time_limit = (int(time_limit / len(rungs)))
-    # print("New time_limit inside pygmo class search", new_time_limit)
-    # print("type new_time_limit", type(new_time_limit))
-
     for rung in rungs:
-    #for rung in [1, 2]:
-        # print("rung_resources", rung_resources)
-        # print("rung_resources[rung]", rung_resources[rung])
-        # for h in rungs:
-        #     print("h", h)
-        #
-        # print("max_rung", max_rung)
-        #     print("rung_resources[rung]", rung_resources[h])
-        #print("len rungs", len(rungs))
-        #print("time_limit inside pygmo class search", time_limit)
-        # with stopit.ThreadingTimeout(new_time_limit):
         try:
-            if rung==0:
+            if rung == 0:
                 with stopit.ThreadingTimeout(new_time_limit) as pyg_time:
                     ops.evaluate = partial(ops.evaluate, subsample=rung_resources[rung])
                     prob = pg.problem(AutoMLProblem(ops, path, rung, max_rung))
+
                     # The initial population
                     pop = pg.population(prob)
                     for i in range(len(x_vectors)):
-                        if f_vectors[i] == -np.inf:
-                            f_vectors[i] = -10000
-                        pop.push_back(x=x_vectors[i], f=[-f_vectors[i]])
+                        if f_vectors[i][0] == -np.inf:
+                            f_vectors[i][0] = -10000
+                        pop.push_back(x=x_vectors[i], f=[-f_vectors[i][0], f_vectors[i][1]])
 
                     # Changes from here
-                    r_policy = pg.r_policy(pg.fair_replace(rate=0.5)) # Share 50% of the individulas en each island
+                    r_policy = pg.r_policy(pg.fair_replace(rate=0.1))  # Share 10% of the individulas en each island
                     s_policy = pg.s_policy(udsp=pg.select_best())
                     archi = pg.archipelago(r_pol=r_policy, s_pol=s_policy, t=pg.topology(pg.ring()))
-                    isl1 = pg.island(algo = pg.algorithm(pg.de(gen = iters)), pop=pop)
+                    #isl1 = pg.island(algo=pg.algorithm(pg.de(gen=iters)), pop=pop)
+                    isl1 = pg.island(algo=pg.algorithm(pg.nsga2(gen=iters)), pop=pop)
                     isls = [isl1 for _ in range(16)]
                     for isl in isls:
                         archi.push_back(isl)
-                    #G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
-                    #G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
-                    #G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
-                    #G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
-                    #G = obtain_topology(name = 'grid_graph', dim = (4, 4))
-                    #G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
-                    #G = obtain_topology(name = 'hypercube_graph', nodes = 4)
-                    #G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
-                    G = obtain_topology(name = 'cycle_graph', nodes = int(len(archi)))
+                    # G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
+                    # G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
+                    # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
+                    # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
+                    # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
+                    # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
+                    # G = obtain_topology(name = 'hypercube_graph', nodes = 4)
+                    # G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
+                    G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
                     print('Added new topology ...')
                     this_topology = pg.free_form(G)
-                    #this_topology = pg.topology(pg.ring(len(archi)))
+                    # this_topology = pg.topology(pg.ring(len(archi)))
                     archi.set_topology(this_topology)
-                    archi.get_champions_f()
                     # print(archi.get_champions_f())
                     archi.evolve()
                     # archi.wait()
                     archi.wait_check()
-                    archi.get_champions_f()
-                    # print(archi.get_champions_f())
-                    # print("IT JUST FINISH")
-                    # print(archi)
-                    # print("Let's start with the iterative process")
-                    # print("len archi.get_champions_f()", len(archi.get_champions_f()))
-                    # print("len archi.get_champions_x()[0]", len(archi.get_champions_x()[0]))
-                    # print("len archi.get_champions_x()", len(archi.get_champions_x()))
+                    #archi.get_champions_f()
 
+                    x_of_island_champion =[]
+                    for isl in archi:
+                        this_population = isl.get_population()
+                        ndf, dl, dc, ndl = pg.fast_non_dominated_sorting(this_population.get_f())
+                        best_ind = pg.select_best_N_mo(points=this_population.get_f(), N=10)
+                        x_of_island_champion += list(this_population.get_x()[best_ind])
 
-                    # final_output = []
-                    x_of_island_champion = archi.get_champions_x()
-                    # print("El archipelago tiene ", len(x_of_island_champion), " nuevos individuos")
+                    #x_of_island_champion = archi.get_champions_x()
                     for k in x_of_island_champion:
                         final_instance = ValuesSearchSpace(k)
                         individual_from_x = final_instance.get_individuals()
                         result = ops.evaluate(individual_from_x)
                         new_ind = result.individual
-                        #output.append(new_ind)
-            #if rung>0 and rung<max_rung:
+                        # output.append(new_ind)
+            # if rung>0 and rung<max_rung:
             if rung > 0:
                 with stopit.ThreadingTimeout(new_time_limit) as pyg_time_highest:
                     # print("We are not in the first Rung")
                     list_aux_save_individuals = []
-                    n_i = math.ceil(100 * (reduction_factor ** (-rung))) # In the paper of Successive is ni, number of configurations to use in the next step
-                    if n_i < 5: n_i=5
+                    n_i = math.ceil(100 * (reduction_factor ** (-rung)))  # In the paper of Successive is ni, number of configurations to use in the next step
+                    n_i = int(4 * round(n_i / 4))# Because NSGA2 works with population multiples of 4
+                    if n_i < 4: n_i = 4
                     f_vectors = []
                     path_new_rung = path + "/" + "rung_iterations" + ".pkl"
-                    # for individual in start_candidates:
-                    for i in range(5): # 5 new random elements
+                    for i in range(5):  # 5 new random elements
                         result = ops.evaluate(start_candidates[i])
                         new_ind = result.individual
                         loss = new_ind.fitness.values[0]
-                        f_vectors.append(loss)
+                        length_pipeline = len(new_ind.pipeline)
+                        f_vectors.append([loss, length_pipeline])
                         with open(path_new_rung, 'wb') as f:
                             pickle.dump(list_aux_save_individuals, f)
                         if rung == max_rung:
-                            output.append(new_ind) # Only add in output when we are in the highest rung
+                            output.append(new_ind)  # Only add in output when we are in the highest rung
                     list_aux_save_individuals = list_aux_save_individuals + top(elementos=n_i, path=path)
 
-                    #Remove .pkl files
+                    # Remove .pkl files
                     for root, dirs, files, in os.walk(path):
                         for file in files:
                             if file.endswith(".pkl"):
                                 name_file = path + file
                                 os.remove(name_file)
 
-                    f_vectors = [new_individual.fitness.values[0] for new_individual in list_aux_save_individuals]
+                    f_vectors = [[new_individual.fitness.values[0], len(new_individual.pipeline)] for new_individual in list_aux_save_individuals]
                     x_vectors = []
                     for i in list_aux_save_individuals:
                         instance_individual_to_vectors = IndividuoVector()
@@ -450,9 +359,9 @@ def pygmo_serach(
                     # The initial population
                     pop = pg.population(prob)
                     for i in range(len(x_vectors)):
-                        if f_vectors[i] == -np.inf:
-                            f_vectors[i] = -10000
-                        pop.push_back(x=x_vectors[i], f=[-f_vectors[i]])
+                        if f_vectors[i][0] == -np.inf:
+                            f_vectors[i][0] = -10000
+                        pop.push_back(x=x_vectors[i], f=[-f_vectors[i][0], f_vectors[i][1]])
 
                     # Changes from here
                     r_policy = pg.r_policy(pg.fair_replace(rate=0.5))  # Share 50% of the individulas en each island
@@ -465,21 +374,22 @@ def pygmo_serach(
                     # broadcast = pg.migration_type(1)  # 1 = Broadcast type
                     # archi.set_migration_type(broadcast)
 
-                    isl1 = pg.island(algo=pg.algorithm(pg.de(gen=iters)), pop=pop)
+                    #isl1 = pg.island(algo=pg.algorithm(pg.de(gen=iters)), pop=pop)
+                    isl1 = pg.island(algo=pg.algorithm(pg.nsga2(gen=iters)), pop=pop)
                     isls = [isl1 for _ in range(16)]
                     for isl in isls:
                         archi.push_back(isl)
-                    #G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
-                    #G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
-                    #G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
-                    #G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
-                    #G = obtain_topology(name = 'grid_graph', dim = (4, 4))
-                    #G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
-                    #G = obtain_topology(name = 'hypercube_graph', nodes = 4)
-                    #G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
-                    G = obtain_topology(name = 'cycle_graph', nodes = int(len(archi)))
+                    # G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
+                    # G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
+                    # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
+                    # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
+                    # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
+                    # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
+                    # G = obtain_topology(name = 'hypercube_graph', nodes = 4)
+                    # G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
+                    G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
                     this_topology = pg.free_form(G)
-                    #this_topology = pg.topology(pg.ring(len(archi)))
+                    # this_topology = pg.topology(pg.ring(len(archi)))
                     archi.set_topology(this_topology)
 
                     # print("Acabo de CREAR EL ARCHIPELAGO, EMPEZARÉ A EVOLUCIONAR EN PARALELO")
@@ -487,12 +397,12 @@ def pygmo_serach(
                     # archi = pg.archipelago(n=islands, algo=algo, pop=pop, t=pg.topology(pg.ring()))
                     # print("CREATION OF THE ARCHIPELAGO, IT WILL START THE EVOLUTION IN PARALLEL")
                     # print(archi)
-                    archi.get_champions_f()
+                    #archi.get_champions_f()
                     # print(archi.get_champions_f())
                     archi.evolve()
                     # archi.wait()
                     archi.wait_check()
-                    archi.get_champions_f()
+                    #archi.get_champions_f()
                     # print(archi.get_champions_f())
                     # print("IT JUST FINISH")
                     # print(archi)
@@ -502,19 +412,24 @@ def pygmo_serach(
                     # print("len archi.get_champions_x()", len(archi.get_champions_x()))
 
                     # final_output = []
-                    x_of_island_champion = archi.get_champions_x()
+                    #x_of_island_champion = archi.get_champions_x()
+                    x_of_island_champion = []
+                    for isl in archi:
+                        this_population = isl.get_population()
+                        ndf, dl, dc, ndl = pg.fast_non_dominated_sorting(this_population.get_f())
+                        best_ind = pg.select_best_N_mo(points=this_population.get_f(), N=10)
+                        x_of_island_champion += list(this_population.get_x()[best_ind])
                     # print("El archipelago tiene ", len(x_of_island_champion), " nuevos individuos")
                     for k in x_of_island_champion:
                         final_instance = ValuesSearchSpace(k)
                         individual_from_x = final_instance.get_individuals()
                         result = ops.evaluate(individual_from_x)
                         new_ind = result.individual
-                        if rung==max_rung:
+                        if rung == max_rung:
                             output.append(new_ind)
 
         except Exception as e:
             print(e)
-
 
     return output
 
