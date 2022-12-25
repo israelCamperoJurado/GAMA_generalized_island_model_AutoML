@@ -587,59 +587,8 @@ class Gama(ABC):
         elif warm_start is None and len(self._final_pop) > 0:
             pop = self._final_pop
         else:
-            pop = [self._operator_set.individual() for _ in range(50)]
-            
-        # print("Start candiates in gama")
-        ## print("Imprimir población en gama.py", len(pop))
-        # ejemplo1 = self._operator_set.individual()
-        ## ejemplo2 = self._operator_set.individual()
-        # print("ejemplo 1", ejemplo1)
-        ## print("ejemplo 2", ejemplo2)
-        # print("main_node type", type(ejemplo1.main_node))
-        # print("main_node", ejemplo1.main_node)
-        # print("main_node TYPE", type(ejemplo1.main_node))
-        # print("main_node_data_node", ejemplo1.main_node._data_node)
-        # print("main_node_data_node TYPE", type(ejemplo1.main_node._data_node))
-        # print("main_node._primitive", ejemplo1.main_node._primitive)
-        # print("main_node._primitive.input", ejemplo1.main_node._primitive.input)
-        # print("main_node._primitive.input TYPE", type(ejemplo1.main_node._primitive.input))
-        # print("main_node._primitive.input TYPE", type(ejemplo1.main_node._primitive.input[0]))
-        # print("main_node._primitive.output", ejemplo1.main_node._primitive.output)
-        # print("main_node._primitive.output TYPE", type(ejemplo1.main_node._primitive.output))
-        # print("main_node._primitive.identifier", ejemplo1.main_node._primitive.identifier)
-        # print("main_node._primitive TYPE", type(ejemplo1.main_node._primitive))
-        # print("main_node._data_node", ejemplo1.main_node._data_node)
-        # print("main_node._data_node TYPE", type(ejemplo1.main_node._data_node))
-        # print("main_node._terminals", ejemplo1.main_node._terminals)
-        # print("main_node._terminals TYPE", type(ejemplo1.main_node._terminals))
-        # print("posicion 1 main_node._terminals", ejemplo1.main_node._terminals[0])
-        # print("posicion 1 main_node._terminals TYPE", type(ejemplo1.main_node._terminals[0]))
-        # print("value main_node._terminals", ejemplo1.main_node._terminals[0].value)
-        # print("output main_node._terminals", ejemplo1.main_node._terminals[0].output)
-        # print("identifier main_node._terminals", ejemplo1.main_node._terminals[0].identifier)
-        # print("identifier main_node._terminals TYPE", type(ejemplo1.main_node._terminals[0].identifier))
+            pop = [self._operator_set.individual() for _ in range(64)] # let's use 64 individuales instead of 50, since we need a multiple of 4 for running the NSGA2
 
-        # print("main_node._primitive TYPE", type(ejemplo1.main_node._primitive))
-        # print("main_node._primitive input", ejemplo1.main_node._primitive.input)
-        # print("main_node._primitive.input TYPE", type(ejemplo1.main_node._primitive.input[0]))
-        # print("main_node._primitive output", ejemplo1.main_node._primitive.output)
-        # print("main_node._primitive output TYPE", type(ejemplo1.main_node._primitive.output))
-        # print("main_node._primitive identifier", ejemplo1.main_node._primitive.identifier)
-        
-        ## PRE-PROCESAMIENTO
-        # print("main_node._data_node", ejemplo1.main_node._data_node)
-        # print("main_node._data_node TYPE", type(ejemplo1.main_node._data_node))
-        # print("main_node._data_node TERMINALS", ejemplo1.main_node._data_node._terminals)
-        # print("main_node._data_node.primitive", ejemplo1.main_node._data_node._primitive)
-        # print("main_node._data_node.primitive.input", ejemplo1.main_node._data_node._primitive.input)
-        # print("main_node._data_node.primitive.input TYPE", type(ejemplo1.main_node._data_node._primitive.input))
-        # print("main_node._data_node.primitive.output", ejemplo1.main_node._data_node._primitive.output)
-        # print("main_node._data_node.primitive.output TYPE", type(ejemplo1.main_node._data_node._primitive.output))
-        # print("main_node._data_node.primitive.identifier (callable)", ejemplo1.main_node._data_node._primitive.identifier)
-        # print("main_node._data_node.primitive.identifier (callable) TYPE", type(ejemplo1.main_node._data_node._primitive.identifier))
-        
-        #for i in pop:
-        #    print(i)
         deadline = time.time() + timeout
         evaluate_pipeline = partial(
             gama.genetic_programming.compilers.scikitlearn.evaluate_pipeline,
@@ -647,14 +596,7 @@ class Gama(ABC):
             y_train=self._y,
             metrics=self._metrics,
         )
-        #print("evaluate_pipeline")
-        #print(evaluate_pipeline)
         AsyncEvaluator.defaults = dict(evaluate_pipeline=evaluate_pipeline)
-        #print(AsyncEvaluator.defaults)
-        # print(AsyncEvaluator.defaults.items())
-        #print(list(AsyncEvaluator.defaults.values())[0][0])
-        #print(type(AsyncEvaluator.defaults['evaluate_pipeline']))
-        
         self._operator_set._evaluate = partial(
             gama.genetic_programming.compilers.scikitlearn.evaluate_individual,
             evaluate_pipeline=evaluate_pipeline,
@@ -663,28 +605,7 @@ class Gama(ABC):
             add_length_to_score=self._regularize_length,
         )
         
-        # ejemplo1 = self._operator_set.individual()
-        # print("ejemplo 1", ejemplo1)
-        # with AsyncEvaluator() as async_:
-        #     async_.submit(self._operator_set.evaluate, ejemplo1)
-        #     future = self._operator_set.evaluate.wait_next(async_)
-        #     if future.result is not None:
-        #         nuevo = future.result.individual
-        #         print("Nuevo a ver si truena", nuevo)
-        
-        # ejemplo1 = self._operator_set.individual()
-        # print("ejemplo 1", ejemplo1)
-        # _newOutput: List[Individual] = []
-        # _check_base_search_hyperparameters(self._operator_set, _newOutput, pop) # Solamente es para ver que todos los elementos en la pop sean tipo Individuals
-        # with AsyncEvaluator() as async_:
-        #     async_.submit(self._operator_set.evaluate, ejemplo1)
-            
-        # ejemplo1 = self._operator_set.individual()
-        # print("ejemplo 1", ejemplo1)
-        # print("ejemplo 1 fitness", ejemplo1.fitness)
-        # print("ejemplo 1 fitness TYPE", type(ejemplo1.fitness))
-        # __________________________________________________________________________
-        
+
         try:
             with stopit.ThreadingTimeout(timeout):
                 self._search_method.dynamic_defaults(self._x, self._y, timeout)
@@ -692,11 +613,8 @@ class Gama(ABC):
                 self._search_method.search(self._operator_set, start_candidates=pop, time_limit=timeout)
         except: 
             self._final_pop = self._search_method.output
-            if isinstance(self._search_method, SearchPygmo) and (len(self._final_pop)<=100):
+            if isinstance(self._search_method, SearchPygmo):
                 print("We need to update the population")
-                # path_use = os.getcwd()
-                # path = path_use.replace(os.sep, '/')
-                # path = path + "/pickle_gama/"
                 path = self._search_method.path
                 for root, dirs, files, in os.walk(path):
                     for file in files:
@@ -708,22 +626,15 @@ class Gama(ABC):
                                 print("Exception", file)
                                 new_lista = []
                             self._final_pop = self._final_pop + new_lista
-            else:
-                self._final_pop = self._search_method.output
+            self._final_pop += self._search_method.output
                 
-        # Decomment from here
-        # except KeyboardInterrupt:
-        #    log.info("Search phase terminated because of Keyboard Interrupt.")
-        # To here
-        self._final_pop = self._search_method.output
-        if isinstance(self._search_method, SearchPygmo) and (len(self._final_pop)<=50): 
+
+        if isinstance(self._search_method, SearchPygmo):
             print("We need to update the population")
-            # path_use = os.getcwd()
-            # path = path_use.replace(os.sep, '/')
-            # path = path + "/pickle_gama/"
             path = self._search_method.path
             print("gama", self._search_method.path)
             for root, dirs, files, in os.walk(path):
+                print('files at the end', files)
                 for file in files:
                     if file.endswith(".pkl"):
                         new_f_path = path + "/" + file
@@ -733,78 +644,14 @@ class Gama(ABC):
                             print("Exception", file)
                             new_lista = []
                         self._final_pop = self._final_pop + new_lista
-        else:
-            self._final_pop = self._search_method.output
-            print("la población venía perrunfla")
-        print("Longitud de la población final_2 en gama.py", len(self._final_pop))
+        #else:
+        self._final_pop += self._search_method.output
+        print("The lenght of individuals has been updated, number of indivuals: ", len(self._final_pop))
         
         n_evaluations = len(self._evaluation_library.evaluations)
         log.info(f"Search phase evaluated {n_evaluations} individuals.")
         print("log n_evaluations", n_evaluations)
-        
-        #******************************************************
-        #Hasta aqui workeaba bien
-        # try:
-        #     with stopit.ThreadingTimeout(timeout):
-        #         print("Voy a evaluar el metodo desde gama.py")
-        #         self._search_method.dynamic_defaults(self._x, self._y, timeout)
-        #         self._search_method.search(self._operator_set, start_candidates=pop)
-        # except KeyboardInterrupt:
-        #     log.info("Search phase terminated because of Keyboard Interrupt.")
-            
-        # # print("Ya terminé las evaluaciones, dormiré 10 segundos")
-        # # time.sleep(10)
-        # # print("Ya dormí 10 segundos")
-        # self._final_pop = self._search_method.output
-        # print("len self._final_pop", len(self._final_pop))
-        # n_evaluations = len(self._evaluation_library.evaluations)
-        # log.info(f"Search phase evaluated {n_evaluations} individuals.")
-        # print("log n_evaluations", n_evaluations)
-        
-        #******************************************************
-        
-        # print("Vamos a matar los procesos en gama.py")
-        # procs = psutil.Process().children()
-        # for p in procs:
-        #     p.terminate()
-        # gone, alive = psutil.wait_procs(procs, timeout=3, callback=on_terminate)
-        # for p in alive:
-        #     p.kill()
-        # print("Ya maté a todos los procesos")
-        #_________________________________________________________________________
-        # for ejemplo1 in self._final_pop:
-        #     print('fitness.values', ejemplo1.fitness.values)
-        #     print('posicion 0 type', ejemplo1.fitness.values[0])
-        # for ejemplo1 in self._final_pop:
-        #     print("ejemplo1", ejemplo1)
-        #     print("main_node type", type(ejemplo1.main_node))
-        #     print("main_node", ejemplo1.main_node)
-        #     print("main_node TYPE", type(ejemplo1.main_node))
-        #     print("main_node_data_node", ejemplo1.main_node._data_node)
-        #     print("main_node_data_node TYPE", type(ejemplo1.main_node._data_node))
-        #     print("main_node._primitive", ejemplo1.main_node._primitive)
-        #     print("main_node._primitive.input", ejemplo1.main_node._primitive.input)
-        #     print("main_node._primitive.input TYPE", type(ejemplo1.main_node._primitive.input))
-        #     #print("main_node._primitive.input TYPE", type(ejemplo1.main_node._primitive.input[0]))
-        #     print("main_node._primitive.output", ejemplo1.main_node._primitive.output)
-        #     print("main_node._primitive.output TYPE", type(ejemplo1.main_node._primitive.output))
-        #     print("main_node._primitive.identifier", ejemplo1.main_node._primitive.identifier)
-        #     print("main_node._primitive TYPE", type(ejemplo1.main_node._primitive))
-        #     print("main_node._data_node", ejemplo1.main_node._data_node)
-        #     print("main_node._data_node TYPE", type(ejemplo1.main_node._data_node))
-        #     print("main_node._terminals", ejemplo1.main_node._terminals)
-        #     print("main_node._terminals TYPE", type(ejemplo1.main_node._terminals))
 
-        # print("Imprimir población final y longitud", len(self._final_pop))
-        # for i in self._final_pop:
-        #    print(i)
-        # print("first element in the final population, gama", self._final_pop[0])
-        # print("first element in the final population, gama TYPE", type(self._final_pop[0]))
-        # print("first element in the final population, gama fitness", self._final_pop[0].fitness)
-        # print("first element in the final population, gama fitness TYPE", type(self._final_pop[0].fitness))
-        # print("first element in the final population, gama fitness values", self._final_pop[0].fitness.values)
-        # print("first element in the final population, gama fitness TYPE values", type(self._final_pop[0].fitness.values))
-        
 
     def export_script(
         self, file: Optional[str] = "gama_pipeline.py", raise_if_exists: bool = False
@@ -885,3 +732,4 @@ class Gama(ABC):
             Function to call when a pipeline is evaluated, return values are ignored.
         """
         self._subscribers["evaluation_completed"].append(callback)
+
