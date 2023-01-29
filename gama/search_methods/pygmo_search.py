@@ -285,9 +285,9 @@ def pygmo_serach(
                     isls = [isl1 for _ in range(16)]
                     for isl in isls:
                         archi.push_back(isl)
-                    G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
+                    # G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
                     # G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
-                    # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
+                    G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
                     # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
                     # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
                     # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
@@ -379,9 +379,9 @@ def pygmo_serach(
                     isls = [isl1 for _ in range(16)]
                     for isl in isls:
                         archi.push_back(isl)
-                    G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
+                    # G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
                     # G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
-                    # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
+                    G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
                     # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
                     # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
                     # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
