@@ -587,8 +587,8 @@ class Gama(ABC):
         elif warm_start is None and len(self._final_pop) > 0:
             pop = self._final_pop
         else:
-            pop = [self._operator_set.individual() for _ in range(64)] # let's use 64 individuales instead of 50, since we need a multiple of 4 for running the NSGA2
-
+            #pop = [self._operator_set.individual() for _ in range(64)] # let's use 64 individuales instead of 50, since we need a multiple of 4 for running the NSGA2
+            pop = [self._operator_set.individual() for _ in range(128)] # let's use 128 individuales instead of 50, since we need a multiple of 4 for running the NSGA2 and at least 5 individuals, given this condition the lowest number is 8, 8*16=128, 16 for the number of nodes of the topologies
         deadline = time.time() + timeout
         evaluate_pipeline = partial(
             gama.genetic_programming.compilers.scikitlearn.evaluate_pipeline,
