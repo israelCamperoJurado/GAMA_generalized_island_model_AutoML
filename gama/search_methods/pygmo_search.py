@@ -213,7 +213,7 @@ def pygmo_serach(
         max_n_evaluations: Optional[int] = None,
         population_size: int = 50,
         islands: int = 8,
-        iters: int = 50, # Previously was 10000
+        iters: int = 200, # Previously was 10000
 ) -> List[Individual]:
     #start_candidates = [start_candidates[i] for i in range(40)]
     if not isinstance(minimum_resource, type(maximum_resource)):
@@ -332,7 +332,7 @@ def pygmo_serach(
             list_to_save_archipelagos.append(archi)
         # if rung>0 and rung<max_rung:
         if rung > 0:
-            if rung == max_rung: iters=200
+            if rung == max_rung: iters=1000
             #with stopit.ThreadingTimeout(new_time_limit) as pyg_time_highest:
             #with stopit.ThreadingTimeout(new_time_limit):
             print("Number or rung: ", rung)
