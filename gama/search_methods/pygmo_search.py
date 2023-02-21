@@ -213,7 +213,7 @@ def pygmo_serach(
         max_n_evaluations: Optional[int] = None,
         population_size: int = 50,
         islands: int = 8,
-        iters: int = 10, # Previously was 10000
+        iters: int = 20, # Previously was 10000
 ) -> List[Individual]:
     #start_candidates = [start_candidates[i] for i in range(40)]
     if not isinstance(minimum_resource, type(maximum_resource)):
