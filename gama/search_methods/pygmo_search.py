@@ -296,14 +296,14 @@ def pygmo_serach(
             #isls = [isl1 for _ in range(16)]
             for isl in isls:
                 archi.push_back(isl)
-            G = obtain_topology(name='complete_graph', nodes=int(len(archi)))
+            # G = obtain_topology(name='complete_graph', nodes=int(len(archi)))
             # G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
             # G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
             # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
             # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
             # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
             # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
-            # G = obtain_topology(name = 'hypercube_graph', nodes = 4)
+            G = obtain_topology(name = 'hypercube_graph', nodes = 4)
             # G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
             # G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
             this_topology = pg.free_form(G)
@@ -411,14 +411,14 @@ def pygmo_serach(
             archi = pg.archipelago() # The topology it is not important here, it's only to initialize the archipelago correctly
             for isl in isls:
                 archi.push_back(isl)
-            G = obtain_topology(name='complete_graph', nodes=int(len(archi)))
+            # G = obtain_topology(name='complete_graph', nodes=int(len(archi)))
             # G = obtain_topology(name='circular_ladder_graph', nodes=int(len(archi) / 2))
             # G = obtain_topology(name = 'balanced_tree', nodes=int(len(archi)-1), h = 1)
             # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
             # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
             # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
             # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
-            # G = obtain_topology(name = 'hypercube_graph', nodes = 4)
+            G = obtain_topology(name = 'hypercube_graph', nodes = 4)
             # G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
             # G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
             this_topology = pg.free_form(G)
