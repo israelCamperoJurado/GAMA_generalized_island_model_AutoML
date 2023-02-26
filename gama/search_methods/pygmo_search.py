@@ -309,8 +309,8 @@ def pygmo_serach(
             # G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
             
             # # Small number of nodes (only 8 islands)
-            G = obtain_topology(name = 'hypercube_graph', nodes = 3)
-            # G = obtain_topology(name = 'grid_graph', dim = (4, 2))
+            # G = obtain_topology(name = 'hypercube_graph', nodes = 3)
+            G = obtain_topology(name = 'grid_graph', dim = (4, 2))
             # G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))            
             
             this_topology = pg.free_form(G)
@@ -430,8 +430,8 @@ def pygmo_serach(
             # G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
             
             # # Small number of nodes (only 8 islands)
-            G = obtain_topology(name = 'hypercube_graph', nodes = 3)
-            # G = obtain_topology(name = 'grid_graph', dim = (4, 2))
+            # G = obtain_topology(name = 'hypercube_graph', nodes = 3)
+            G = obtain_topology(name = 'grid_graph', dim = (4, 2))
             # G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))    
             
             this_topology = pg.free_form(G)
