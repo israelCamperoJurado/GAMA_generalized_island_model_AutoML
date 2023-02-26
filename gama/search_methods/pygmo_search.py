@@ -264,8 +264,9 @@ def pygmo_serach(
             #with stopit.ThreadingTimeout(new_time_limit):
             ops.evaluate = partial(ops.evaluate, subsample=rung_resources[rung])
             prob = pg.problem(AutoMLProblem(ops, path, rung, max_rung))
-            minimum_number_of_islands = 16
-            minimum_number_individuals_per_island = 8 # We want 8 individuals per island (16 islands)
+            # minimum_number_of_islands = 16
+            minimum_number_of_islands = 8 
+            minimum_number_individuals_per_island = 8 # We want 8 individuals per island (X islands)
             number_population = int(len(x_vectors)/minimum_number_individuals_per_island)
             population_list = [pg.population(prob) for i in range(number_population)]
             isls = []
@@ -302,10 +303,16 @@ def pygmo_serach(
             # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
             # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
             # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
-            G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
+            # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
             # G = obtain_topology(name = 'hypercube_graph', nodes = 4)
             # G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
             # G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
+            
+            # # Small number of nodes (only 8 islands)
+            G = obtain_topology(name = 'hypercube_graph', nodes = 3)
+            # G = obtain_topology(name = 'grid_graph', dim = (4, 2))
+            # G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))            
+            
             this_topology = pg.free_form(G)
             # this_topology = pg.topology(pg.ring(len(archi)))
             archi.set_topology(this_topology)
@@ -417,10 +424,16 @@ def pygmo_serach(
             # G = obtain_topology(name = 'wheel', nodes=int(len(archi)))
             # G = obtain_topology(name='ladder_graph', nodes=int(len(archi) / 2))
             # G = obtain_topology(name = 'grid_graph', dim = (4, 4))
-            G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
+            # G = obtain_topology(name = 'grid_graph', dim = (4, 2, 2))
             # G = obtain_topology(name = 'hypercube_graph', nodes = 4)
             # G = obtain_topology(name = 'watts_strogatz_graph', nodes = int(len(archi)), k=2, p=0.5)
             # G = obtain_topology(name='cycle_graph', nodes=int(len(archi)))
+            
+            # # Small number of nodes (only 8 islands)
+            G = obtain_topology(name = 'hypercube_graph', nodes = 3)
+            # G = obtain_topology(name = 'grid_graph', dim = (4, 2))
+            # G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))    
+            
             this_topology = pg.free_form(G)
             # this_topology = pg.topology(pg.ring(len(archi)))
             archi.set_topology(this_topology)
