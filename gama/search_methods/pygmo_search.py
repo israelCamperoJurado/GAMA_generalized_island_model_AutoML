@@ -264,8 +264,9 @@ def pygmo_serach(
             #with stopit.ThreadingTimeout(new_time_limit):
             ops.evaluate = partial(ops.evaluate, subsample=rung_resources[rung])
             prob = pg.problem(AutoMLProblem(ops, path, rung, max_rung))
-            # minimum_number_of_islands = 16
-            minimum_number_of_islands = 8 
+            # minimum_number_of_islands = 16 # For 128 individuals
+            # minimum_number_of_islands = 8 # For 64 individuals
+            minimum_number_of_islands = 4 # For 32 individuals 
             minimum_number_individuals_per_island = 8 # We want 8 individuals per island (X islands)
             number_population = int(len(x_vectors)/minimum_number_individuals_per_island)
             population_list = [pg.population(prob) for i in range(number_population)]
@@ -311,7 +312,10 @@ def pygmo_serach(
             # # Small number of nodes (only 8 islands)
             # G = obtain_topology(name = 'hypercube_graph', nodes = 3)
             # G = obtain_topology(name = 'grid_graph', dim = (4, 2))
-            G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))            
+            # G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))  
+            
+            # # Tiny number of nodes (only 4 islands)
+            G = obtain_topology(name = 'grid_graph', dim = (2, 2))
             
             this_topology = pg.free_form(G)
             # this_topology = pg.topology(pg.ring(len(archi)))
@@ -432,7 +436,10 @@ def pygmo_serach(
             # # Small number of nodes (only 8 islands)
             # G = obtain_topology(name = 'hypercube_graph', nodes = 3)
             # G = obtain_topology(name = 'grid_graph', dim = (4, 2))
-            G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))    
+            # G = obtain_topology(name = 'grid_graph', dim = (2, 2, 2))    
+            
+            # # Tiny number of nodes (only 4 islands)
+            G = obtain_topology(name = 'grid_graph', dim = (2, 2))
             
             this_topology = pg.free_form(G)
             # this_topology = pg.topology(pg.ring(len(archi)))
