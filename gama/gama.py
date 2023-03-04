@@ -589,7 +589,8 @@ class Gama(ABC):
         else:
             # pop = [self._operator_set.individual() for _ in range(64)] # let's use 64 individuales instead of 50, since we need a multiple of 4 for running the NSGA2
             # pop = [self._operator_set.individual() for _ in range(128)] # let's use 128 individuales instead of 50, since we need a multiple of 4 for running the NSGA2 and at least 5 individuals, given this condition the lowest number is 8, 8*16=128, 16 for the number of nodes of the topologies
-            pop = [self._operator_set.individual() for _ in range(64)] # Now we are going to use only 64 for 8 islands
+            # pop = [self._operator_set.individual() for _ in range(64)] # Now we are going to use only 64 for 8 islands
+            pop = [self._operator_set.individual() for _ in range(32)] # Now we are going to use only 32 for 4 islands
         deadline = time.time() + timeout
         evaluate_pipeline = partial(
             gama.genetic_programming.compilers.scikitlearn.evaluate_pipeline,
